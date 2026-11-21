@@ -362,6 +362,148 @@ footer a{color:#d4c79f}
 .pop-x{position:absolute;top:10px;right:12px;background:none;border:0;font-size:1.6rem;color:var(--tinta-2);cursor:pointer;line-height:1}
 .foto-lembra{width:100%;border-radius:18px;margin:0 auto 26px;box-shadow:0 22px 40px -24px rgba(59,34,14,.6)}
 .pop-nao{display:block;margin:14px auto 0;background:none;border:0;color:var(--tinta-2);text-decoration:underline;font-size:.9rem;cursor:pointer}
+
+/* ===== REMODELAGEM v2: estrutura de página escalada (faixa com preço, CTA cedo, razões, linha do tempo, comparativo, empilhamento) ===== */
+.faixa-topo{display:flex;flex-direction:column;gap:2px;font-size:.74rem;letter-spacing:.03em;padding:7px 10px}
+.faixa-topo .l2{font-weight:600;opacity:.92}
+.btn{text-transform:uppercase;letter-spacing:.03em;font-size:1.02rem}
+.btn small{text-transform:none;letter-spacing:0}
+.garantia-linha{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:12px;font-size:.9rem;color:var(--tinta-2)}
+.garantia-linha .ic{width:18px;height:18px;color:var(--folha);stroke-width:3}
+.escuro .garantia-linha,.hero .garantia-linha{color:#e3d6ae}
+.escuro .garantia-linha .ic,.hero .garantia-linha .ic{color:var(--mel)}
+.leve-it{font-style:italic;color:#d9cca4;max-width:30em;margin:0 auto 22px;font-size:1rem;text-align:center}
+.hero .sub b{color:#fbf2da}
+.cards-prova{display:grid;gap:10px;max-width:440px;margin:28px auto 26px;text-align:left}
+.cards-prova div{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(226,199,132,.25);border-radius:14px;padding:14px 16px;font-size:.95rem;line-height:1.4;color:#e3d6ae}
+.cards-prova i{font-style:normal;font-size:1.5rem;flex:none}
+.cards-prova b{color:#fbf2da}
+.hero .acao+.capa-box{margin-top:30px}
+
+.ganhos-sec{padding:48px 0}
+.ganhos{display:grid;gap:30px;text-align:center}
+.ganhos i{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 10px;border-radius:50%;background:#efe2c2;font-style:normal;font-size:1.6rem}
+.ganhos small{display:block;font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--folha)}
+.ganhos b{display:block;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--mata);margin-top:4px}
+
+.marquee{overflow:hidden;background:var(--mel);color:var(--mel-t);padding:11px 0;font-size:.82rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.marquee-trilho{display:flex;width:max-content;animation:corre 38s linear infinite}
+.marquee-trilho span{padding-right:22px}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+.mel{font-style:normal;color:var(--mel)}
+.nw{white-space:nowrap}
+.kicker{text-align:center;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro-cl);max-width:28em;margin:14px auto 14px;line-height:1.6}
+.porque{background:var(--papel);color:var(--tinta);border-radius:18px;overflow:hidden;margin-bottom:22px;box-shadow:0 24px 50px -28px rgba(0,0,0,.7)}
+.porque>img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.porque>div:last-child{padding:22px 22px 24px}
+.porque h3{font-size:1.3rem;line-height:1.25;color:var(--mata)!important;margin-bottom:10px}
+.porque h3 span{color:var(--mel-h)}
+.porque p{font-size:1rem;line-height:1.6;color:var(--tinta-2)}
+.porque-topo{display:flex;flex-direction:column;align-items:center;gap:2px;padding:28px 16px 22px;background:linear-gradient(160deg,#6b3f17,var(--mata));color:#efe4c6;text-align:center}
+.porque-topo .ic{width:40px;height:40px;color:var(--mel);stroke-width:1.6;margin-bottom:6px}
+.porque-topo b{font-family:var(--serif);font-size:2.2rem;color:#fbf2da;line-height:1}
+.porque-topo span{font-size:.92rem;color:#d9cca4}
+.regra-card{margin:0;max-width:none;padding:20px 16px 4px;background:#f1e5c6}
+.regra-card div{background:#fff}
+.escuro .acao{max-width:440px;margin:30px auto 0}
+
+.linha-tempo{list-style:none;display:grid;gap:18px;margin:26px 0 34px}
+.linha-tempo li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--perg-2);border-radius:16px;padding:18px 16px}
+.linha-tempo i{font-style:normal;font-size:1.7rem;flex:none;line-height:1.2}
+.linha-tempo small{display:block;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--folha);margin-bottom:2px}
+.linha-tempo h3{font-size:1.15rem;margin-bottom:6px}
+.linha-tempo p{font-size:.97rem;color:var(--tinta-2);line-height:1.5}
+.acao{max-width:440px;margin:0 auto}
+
+.compara{background:var(--papel);border:1px solid var(--perg-2);border-radius:16px;overflow:hidden;margin-top:24px;font-size:.84rem;line-height:1.3}
+.cmp-cab,.cmp-linha{display:grid;grid-template-columns:1.05fr 1fr 1fr 1fr}
+.cmp-cab b{padding:12px 6px;text-align:center;font-size:.8rem;background:var(--mata);color:#fbf2da}
+.cmp-cab b:nth-child(2){background:var(--mel);color:var(--mel-t)}
+.cmp-cab span{background:var(--mata)}
+.cmp-linha{border-top:1px solid var(--perg-2)}
+.cmp-linha span{padding:12px 8px;font-weight:700;color:var(--mata);background:#f1e5c6}
+.cmp-linha em{font-style:normal;padding:12px 6px;text-align:center;color:var(--tinta-2)}
+.cmp-linha em:nth-of-type(1){background:#fff7e3;color:var(--tinta);font-weight:700}
+.cmp-linha em::before{display:block;font-size:.95rem;margin-bottom:2px}
+.cmp-linha .sim::before{content:"✅"}
+.cmp-linha .nao::before{content:"❌"}
+.cmp-linha .ta::before{content:"⚠️"}
+
+.historia>p{font-size:1.04rem;margin:0 auto 16px;max-width:32em}
+.historia .destaque{font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--mata);text-align:center;margin:22px auto 14px}
+.historia .lembra{margin-bottom:10px}
+.xlist{list-style:none;display:grid;gap:12px;max-width:32em;margin:0 auto 22px}
+.xlist li{position:relative;padding-left:34px;font-size:1rem;line-height:1.45}
+.xlist li::before{position:absolute;left:0;top:0;font-size:1.05rem;line-height:1.35}
+.xlist .x::before{content:"❌"}
+.xlist .v::before{content:"✅"}
+.xlist .v{font-weight:700;color:var(--mata)}
+.historia .acao{margin-top:30px}
+
+.amostra{list-style:none;display:grid;gap:12px;margin:34px 0 34px}
+.amostra li{position:relative;padding:14px 16px 14px 46px;background:var(--papel);border:1px solid var(--perg-2);border-radius:14px;font-size:.98rem;line-height:1.45;color:var(--tinta-2)}
+.amostra li::before{content:"🌿";position:absolute;left:14px;top:13px}
+.amostra b{color:var(--mata)}
+.sub-tit{text-align:center;font-size:1.4rem;margin:8px 0 18px}
+
+.selo-b{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;font-size:.8rem;font-weight:800;margin-bottom:4px!important;color:var(--mel)!important}
+.selo-b s{color:#e48d7b;font-weight:600}
+.selo-b b{background:#a7d79b;color:#1d2b12;border-radius:999px;padding:1px 9px;font-size:.74rem}
+
+.stack{background:var(--papel);border:2.5px solid var(--mel);border-radius:22px;padding:28px 20px 22px;text-align:center;box-shadow:0 30px 60px -30px rgba(59,34,14,.6);max-width:480px;margin:0 auto}
+.stack h2{font-size:1.5rem;margin-bottom:18px}
+.stack-lista{list-style:none;text-align:left;display:grid;gap:0;margin-bottom:14px}
+.stack-lista li{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed var(--perg-2);font-size:.96rem;line-height:1.35}
+.stack-lista li span{flex:1}
+.stack-lista li s{flex:none;color:var(--risco);font-weight:700;font-size:.92rem}
+.stack-lista .ic{color:#fff;background:var(--folha);border-radius:50%;padding:4px;width:22px;height:22px;stroke-width:3;margin-top:1px}
+.stack-total{display:flex;justify-content:space-between;align-items:baseline;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.9rem;color:var(--tinta-2);margin-bottom:18px}
+.stack-total s{color:var(--risco);font-size:1.15rem;text-decoration-thickness:2px}
+.stack-hoje{font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--folha)}
+.stack .preco{font-size:3.6rem}
+.so-livro{text-align:center;font-size:.92rem;color:var(--tinta-2);margin-top:22px}
+.so-livro a{color:var(--tinta);font-weight:700}
+
+.garantia .forte{margin-top:8px;font-weight:700;color:var(--mata)}
+
+.carta{text-align:left}
+.carta img{width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 auto 16px;box-shadow:0 0 0 3px var(--papel),0 0 0 5px var(--ouro)}
+.carta h2{margin-bottom:20px}
+.carta p{font-size:1.04rem;margin-bottom:14px}
+.carta .assina{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--mata);margin-top:20px}
+.carta .assina small{display:block;font-family:var(--sans);font-weight:400;font-size:.88rem;color:var(--tinta-2)}
+
+.final .intro{margin-bottom:16px}
+.preco-final{margin:26px 0 18px}
+.final .preco{color:#fbf2da}
+.final .unico{color:#d9cca4}
+
+@media (max-width:370px){
+  .compara{font-size:.76rem}
+  .cmp-cab b{font-size:.72rem}
+}
+
+/* usos tradicionais */
+.kicker-claro{color:var(--folha);margin-top:0}
+.usos{display:grid;gap:12px}
+.usos>div{display:flex;gap:14px;align-items:flex-start;background:var(--papel);border:1px solid var(--perg-2);border-radius:16px;padding:16px}
+.usos i{font-style:normal;font-size:1.6rem;flex:none;line-height:1.2}
+.usos b{display:block;font-family:var(--serif);font-size:1.12rem;color:var(--mata);line-height:1.25;margin-bottom:4px}
+.usos p{font-size:.96rem;color:var(--tinta-2);line-height:1.45}
+.usos .tag{display:inline-block;margin-top:8px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--folha);background:#e6ecd6;border-radius:999px;padding:2px 10px}
+.usos .tag.fora{color:#8a3a12;background:#f6dfcf}
+.aviso-usos{display:flex;gap:12px;align-items:flex-start;margin-top:20px;background:#fff7e3;border:1px solid #ead29a;border-radius:14px;padding:14px 16px;font-size:.93rem;line-height:1.45;color:var(--tinta-2)}
+.aviso-usos .ic{width:22px;height:22px;color:var(--ouro);margin-top:1px}
+.aviso-usos b{color:var(--tinta)}
+@media (min-width:700px){.usos{grid-template-columns:1fr 1fr}}
+/* depoimentos em print */
+.prints-sec{background:var(--papel);overflow:hidden}
+.prints-trilho{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.prints-trilho::-webkit-scrollbar{display:none}
+.prints-trilho img{flex:0 0 72%;max-width:280px;scroll-snap-align:center;border-radius:16px;border:1px solid var(--perg-2);box-shadow:0 18px 34px -20px rgba(59,34,14,.55);background:#fff;object-fit:contain}
+.prints-dica{text-align:center;font-size:.88rem;color:var(--tinta-2);margin-top:4px}
+@media (min-width:700px){.prints-trilho{justify-content:center}.prints-trilho img{flex-basis:240px}}
 </style>
 </head>
 <body>
@@ -391,8 +533,8 @@ footer a{color:#d4c79f}
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
 </svg>
 
-<!-- 1. STICKY: faixa de oferta + perfil -->
-<div class="faixa-topo">🛡️ 7 dias de garantia · 📲 Acesso na hora, no celular · 🎁 4 presentes no plano completo</div>
+<!-- 1. FAIXA DE OFERTA + PERFIL -->
+<div class="faixa-topo"><span>🛡️ 7 DIAS SEM RISCO &nbsp;|&nbsp; 📲 ACESSO IMEDIATO NO E-MAIL</span><span class="l2">Tudo de R$ <span data-preco="antigo">197,00</span> por R$ <span data-preco="completo">27,00</span> · oferta de lançamento</span></div>
 <div class="perfil">
   <img src="assets/avatar-antonio.jpg" alt="" width="38" height="38" onerror="this.remove()">
   <div><b>A Botica dos Antigos</b><small>com o Seu Antônio</small></div>
@@ -403,70 +545,190 @@ footer a{color:#d4c79f}
 <!-- 2. HERO -->
 <header class="hero grao" id="topo">
   <div class="wrap">
-    <span class="etiqueta">Do armário da vó</span>
+    <span class="etiqueta">Do caderno do Seu Antônio</span>
     <p class="aspas">“Minha avó tinha um armário só de vidrinhos. <em>Hoje eu te ensino a montar o seu.</em>”</p>
     <p class="quem">— Seu Antônio</p>
-    <p class="sub">31 tinturas e garrafadas dos antigos: a erva de molho no álcool de beber por 15 dias, coada, em gotinhas que duram 1 ano. Com a medida certa e os cuidados de cada vidrinho.</p>
+    <p class="sub">Descubra o passo a passo para transformar ervas comuns — muitas que você já tem no quintal ou acha na feira — em <b>vidrinhos de gotas que duram 1 ano</b> no armário. Ficam de molho em 10 minutos de preparo, com a medida certa e os cuidados de cada um.</p>
+    <p class="leve-it">O chá da vó continua valendo. O vidrinho é a mesma erva, pronta o ano inteiro.</p>
     <div class="acao">
-      <a class="btn" href="#oferta">Quero montar a minha botica<small>a partir de R$ <span data-preco="basico">17,00</span>, acesso na hora</small></a>
-      <div class="seguro"><span><svg class="ic"><use href="#i-escudo"/></svg>7 dias de garantia</span><span><svg class="ic"><use href="#i-raio"/></svg>Acesso imediato</span></div>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica por <span class="nw">R$ <span data-preco="completo">27,00</span></span><small>acesso na hora, no e-mail</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
     <div class="capa-box">
       <img class="mockup" src="assets/hero-mockup.jpg" alt="O livro A Botica dos Antigos impresso e no celular, com vidrinhos de tintura" width="1000" height="1000" fetchpriority="high" onerror="this.outerHTML=document.getElementById('capaCss').innerHTML">
-      <!-- MOCKUP: assets/hero-mockup.jpg (se faltar, aparece a capa desenhada) -->
     </div>
-    <div class="fatos">
-      <div><b data-conta="31">31</b><span>preparos</span></div>
-      <div><b>15</b><span>dias de molho</span></div>
-      <div><b>1 ano</b><span>de validade</span></div>
+    <div class="cards-prova">
+      <div><i>📖</i><span><b>31 tinturas e garrafadas</b> com a medida certa de cada uma</span></div>
+      <div><i>⚠️</i><span><b>Os cuidados de cada vidrinho:</b> quem pode e quem não pode tomar</span></div>
+      <div><i>🍯</i><span><b>Versão sem álcool</b> de cada vidrinho, para quem não pode beber</span></div>
+    </div>
+    <div class="acao">
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero minha botica em casa<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
 </header>
 
-<!-- 3. DOR / LEMBRANÇAS -->
+<!-- 3. TRÊS GANHOS -->
+<section class="ganhos-sec" style="background:var(--papel)">
+  <div class="wrap">
+    <div class="ganhos">
+      <div class="rv"><i>🍽️</i><small>Depois do almoço de domingo</small><b>O vidrinho amargo, já pronto</b></div>
+      <div class="rv"><i>🌿</i><small>As ervas do quintal</small><b>Viram vidrinho que dura 1 ano</b></div>
+      <div class="rv"><i>🎁</i><small>O Natal chegando</small><b>Presentes feitos à mão</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FAIXA DE GARANTIA QUE CORRE -->
+<div class="marquee" aria-label="Garantia de 7 dias: faça o seu primeiro vidrinho ou seu dinheiro de volta">
+  <div class="marquee-trilho" aria-hidden="true">
+    <span>GARANTIA DE 7 DIAS: FAÇA O SEU PRIMEIRO VIDRINHO OU SEU DINHEIRO DE VOLTA ●</span><span>GARANTIA DE 7 DIAS: FAÇA O SEU PRIMEIRO VIDRINHO OU SEU DINHEIRO DE VOLTA ●</span><span>GARANTIA DE 7 DIAS: FAÇA O SEU PRIMEIRO VIDRINHO OU SEU DINHEIRO DE VOLTA ●</span><span>GARANTIA DE 7 DIAS: FAÇA O SEU PRIMEIRO VIDRINHO OU SEU DINHEIRO DE VOLTA ●</span>
+  </div>
+</div>
+
+<!-- 5. POR QUE O VIDRINHO (3 razões) -->
+<section class="escuro grao">
+  <div class="wrap">
+    <h2 class="rv">Nenhum outro jeito de guardar a erva dura tanto quanto <em class="mel">o vidrinho da vó</em>.</h2>
+    <p class="kicker rv">A Botica te devolve o costume dos antigos de 3 jeitos simples</p>
+    <p class="leve-it rv">A erva da feira murcha na geladeira. O chá esfria na mesma tarde. O vidrinho fica no armário, pronto, o ano inteiro.</p>
+
+    <article class="porque rv">
+      <img src="assets/armario-vo.jpg" alt="O armário de vidrinhos da vó" loading="lazy" onerror="this.remove()">
+      <div>
+        <h3><span>1.</span> O vidrinho guarda o que o bule não guarda.</h3>
+        <p>No chá, a água quente puxa uma parte da erva, e o resto vai embora no coador. O álcool de beber puxa da planta até o que não se dissolve na água, e ainda conserva. Era por isso que a vó deixava a raiz de molho na cachaça: era o jeito de ter a erva o ano todo, sem estragar.</p>
+      </div>
+    </article>
+
+    <article class="porque rv">
+      <div class="porque-topo"><svg class="ic"><use href="#i-gota"/></svg><b>10 segundos</b><span>umas gotas num copo d'água</span></div>
+      <div>
+        <h3><span>2.</span> Sem fogo, sem bule, sem coador: 10 segundos por dia.</h3>
+        <p>Chá pede fogo, bule, coador e paciência. No dia corrido, fica para amanhã, e amanhã vira nunca. O vidrinho pede um copo d'água: pinga as gotas que o livro manda e pronto. No trabalho, na viagem, na casa da filha. É por isso que o costume pega e não fica esquecido na gaveta.</p>
+      </div>
+    </article>
+
+    <article class="porque rv">
+      <div class="regra regra-card">
+        <div><b>1 : 5</b>erva seca para álcool</div>
+        <div><b>15</b>dias no escuro</div>
+        <div><b>1 ano</b>de validade</div>
+      </div>
+      <div>
+        <h3><span>3.</span> Uma botica inteira com uma regra só.</h3>
+        <p>Aprendeu o primeiro vidrinho, sabe fazer todos: 1 parte de erva seca para 5 de álcool, 15 dias no escuro sacudindo todo dia, coa e guarda. Você prepara uma vez e tem o vidrinho da digestão, o da calma, o de passar na perna. Quando alguém da casa precisa, você não fica caçando receita solta na internet às 11 da noite. Você abre o armário.</p>
+      </div>
+    </article>
+
+    <div class="acao rv">
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero aprender a fazer meus vidrinhos<small>R$ <span data-preco="completo">27,00</span>, acesso na hora</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5b. USOS TRADICIONAIS: para que serve cada vidrinho -->
 <section class="grao">
   <div class="wrap">
-    <div class="orn"><svg class="ic"><use href="#i-folha"/></svg></div>
-    <h2 class="rv">Você também lembra?</h2>
-    <p class="intro rv">Quem cresceu perto dos mais velhos guarda pelo menos uma destas lembranças:</p>
-    <img class="foto-lembra rv" src="assets/armario-vo.jpg" alt="O armário de vidrinhos da vó" loading="lazy" onerror="this.remove()">
-    <ul class="lembra rv">
-      <li><svg class="ic"><use href="#i-gota"/></svg><span>O vidrinho amargo que aparecia depois do almoço de domingo, umas gotas num copo d'água e pronto.</span></li>
-      <li><svg class="ic"><use href="#i-gota"/></svg><span>O álcool de arnica que a vó passava na pancada da criança.</span></li>
-      <li><svg class="ic"><use href="#i-gota"/></svg><span>A fricção de álcool de alecrim nas pernas cansadas, no fim do dia.</span></li>
-      <li><svg class="ic"><use href="#i-gota"/></svg><span>A garrafa com raiz e casca de molho na cachaça, guardada no canto da cozinha.</span></li>
-      <li><svg class="ic"><use href="#i-gota"/></svg><span>O papelzinho escrito a lápis colado em cada vidro, para ninguém confundir.</span></li>
-    </ul>
-    <div class="citacao rv">
-      <p>A verdade é que esse saber está sumindo. Quem sabia fazer não anotou a medida.</p>
-      <p>E o que sobrou virou <strong>garrafada de feira sem rótulo</strong>, sem dizer o que tem dentro, prometendo curar de tudo. Ou receita solta na internet, que manda usar álcool de farmácia — que <strong>não é de beber</strong>.</p>
-      <p>Foi por isso que nasceu <strong>A Botica dos Antigos</strong>: o costume da vó, com a medida certa e os cuidados escritos com todas as letras.</p>
+    <p class="kicker kicker-claro rv">O que a tradição usava para cada coisa</p>
+    <h2 class="rv">Para cada incômodo do dia a dia, um vidrinho dos antigos</h2>
+    <p class="intro rv">No livro, você toca no que está sentindo e ele te leva direto ao vidrinho certo. Estes são os usos que passaram de geração em geração:</p>
+    <div class="usos">
+      <div class="rv"><i>🍽️</i><div><b>Comi demais, a barriga pesou</b><p>Boldo, carqueja e o amargo de casca de laranja: os amargos que a tradição usa depois da comida gordurosa.</p><span class="tag">gotas na água</span></div></div>
+      <div class="rv"><i>🔥</i><div><b>Queimação no estômago</b><p>Espinheira-santa, a folha que o povo usa há gerações para azia e queimação.</p><span class="tag">gotas na água</span></div></div>
+      <div class="rv"><i>💨</i><div><b>Gases e barriga estufada</b><p>Erva-doce, hortelã e capim-santo, das mais antigas para a barriga estufada.</p><span class="tag">gotas na água</span></div></div>
+      <div class="rv"><i>😰</i><div><b>Nervoso, cabeça a mil</b><p>Melissa, camomila e capim-santo: os calmantes suaves de toda casa brasileira.</p><span class="tag">gotas na água</span></div></div>
+      <div class="rv"><i>🌙</i><div><b>O sono que não chega</b><p>Folha de maracujá, camomila e mulungu: os vidrinhos que a tradição usa nas noites teimosas.</p><span class="tag">gotas na água</span></div></div>
+      <div class="rv"><i>🤧</i><div><b>Garganta arranhando e tosse</b><p>Guaco, própolis e tomilho, e o gargarejo de casca de romã da vó.</p><span class="tag">gotas e gargarejo</span></div></div>
+      <div class="rv"><i>🦵</i><div><b>Perna cansada e pancada</b><p>A fricção de álcool de alecrim no fim do dia, e a compressa de arnica e erva-baleeira na pancada.</p><span class="tag fora">só por fora</span></div></div>
+      <div class="rv"><i>🩹</i><div><b>Pele irritada e vermelha</b><p>Compressa de calêndula, a florzinha alaranjada que é a planta da pele.</p><span class="tag fora">só por fora</span></div></div>
+      <div class="rv"><i>🧡</i><div><b>Junta dura de manhã</b><p>Cúrcuma e gengibre, as raízes da despensa que a tradição usa nas juntas.</p><span class="tag">gotas na água</span></div></div>
+      <div class="rv"><i>🦟</i><div><b>Mosquito na varanda</b><p>O álcool de cravo, costume antigo para espantar o mosquito pelo cheiro.</p><span class="tag fora">só por fora</span></div></div>
+    </div>
+    <div class="aviso-usos rv"><svg class="ic"><use href="#i-escudo"/></svg><p>São usos da tradição popular, para o conforto do dia a dia. <b>Não tratam doença e não substituem o remédio do médico.</b> Dor forte, febre, ou incômodo que não passa ou que sempre volta: procure o médico. E cada vidrinho do livro diz quem não pode usar.</p></div>
+    <div class="acao rv" style="margin-top:30px">
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero os vidrinhos da vó<small>R$ <span data-preco="completo">27,00</span>, acesso na hora</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
 </section>
 
-<!-- 4. COMO FUNCIONA -->
+<!-- 6. DEPOIMENTOS (aparece sozinho quando você preencher DEPOIMENTOS lá embaixo) -->
+<section class="depos" id="depoimentos" hidden>
+  <div class="wrap"><h2>Quem já montou a sua botica</h2></div>
+  <div class="depos-janela"><div class="depos-trilho" id="deposTrilho"></div></div>
+</section>
+
+<!-- 7. O QUE ACONTECE DEPOIS -->
 <section style="background:var(--papel)">
   <div class="wrap">
-    <h2 class="rv">É mais simples do que parece</h2>
-    <p class="intro rv">Toda a botica segue a mesma regra de ouro. Aprendeu a primeira, sabe fazer todas.</p>
-    <div class="regra rv">
-      <div><b>1 : 5</b>1 parte de erva seca para 5 de álcool</div>
-      <div><b>15</b>dias no escuro, sacudindo todo dia</div>
-      <div><b>1 ano</b>de validade depois de coada</div>
-    </div>
-    <ol class="tres rv">
-      <li><b>1</b><div><strong>Põe a erva de molho</strong><span>No vidro, com álcool de cereais misturado com água (o livro ensina qual comprar e qual nunca usar).</span></div></li>
-      <li><b>2</b><div><strong>Espera 15 dias</strong><span>No armário escuro, sacudindo uma vez por dia. O livro avisa o dia de coar.</span></div></li>
-      <li><b>3</b><div><strong>Coa e guarda em gotinhas</strong><span>No vidrinho âmbar de conta-gotas, com o rótulo pronto para imprimir. Dura 1 ano.</span></div></li>
+    <h2 class="rv">O que acontece depois que você garante a sua Botica:</h2>
+    <ol class="linha-tempo">
+      <li class="rv"><i>⏱️</i><div><small>Hoje, em 5 minutos</small><h3>O acesso chega no seu e-mail.</h3><p>Você abre o livro no celular, marca no perfil de cuidado os remédios que toma e escolhe o primeiro vidrinho. Põe de molho em uns 10 minutos, com um vidro, a erva e o álcool de cereais.</p></div></li>
+      <li class="rv"><i>📅</i><div><small>Em 15 dias</small><h3>O primeiro vidrinho fica pronto.</h3><p>O livro avisa o dia de coar. Enquanto isso, você já põe os próximos de molho: o da digestão, o da calma, o de passar. O armário começa a ganhar cara de botica: vidro âmbar, rótulo impresso, data escrita.</p></div></li>
+      <li class="rv"><i>🏡</i><div><small>Em 1 a 2 meses</small><h3>A botica montada, e a família percebe.</h3><p>Almoço pesado? Tem o vidrinho amargo. Perna cansada no fim do dia? Tem a fricção de alecrim. Você vira a pessoa da família que sabe o que fazer, como a vó era. E cada vidrinho dura 1 ano.</p></div></li>
     </ol>
+    <div class="acao rv">
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Começar minha botica hoje<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
+    </div>
   </div>
 </section>
 
-<!-- 5. POR DENTRO (telas reais do livro) -->
-<section class="dentro" style="background:var(--papel);padding-top:0">
+<!-- 8. COMPARATIVO -->
+<section class="grao">
   <div class="wrap">
-    <h2 class="rv">Veja por dentro</h2>
+    <h2 class="rv">O vidrinho é o jeito mais prático de ter a erva sempre à mão</h2>
+    <div class="compara rv">
+      <div class="cmp-cab"><span></span><b>🏺 Vidrinho</b><b>🍵 Chá</b><b>🍾 Garrafada de feira</b></div>
+      <div class="cmp-linha"><span>Dura quanto tempo</span><em class="sim">1 ano</em><em class="nao">Algumas horas</em><em class="ta">Não diz</em></div>
+      <div class="cmp-linha"><span>Tempo no dia a dia</span><em class="sim">10 segundos</em><em class="nao">15 min de preparo</em><em class="sim">Rápido</em></div>
+      <div class="cmp-linha"><span>Você sabe o que tem dentro</span><em class="sim">Fez com as próprias mãos</em><em class="sim">Sim</em><em class="nao">Não tem rótulo</em></div>
+      <div class="cmp-linha"><span>A medida certa</span><em class="sim">Escrita no livro</em><em class="ta">No olho</em><em class="nao">Ninguém diz</em></div>
+      <div class="cmp-linha"><span>Avisa quem não pode tomar</span><em class="sim">Em cada vidrinho</em><em class="ta">Depende</em><em class="nao">Promete curar tudo</em></div>
+    </div>
+    <p class="intro rv" style="margin:22px auto 0;font-size:.95rem">O chá da vó continua bom. O vidrinho é para ter a erva pronta no dia em que não dá tempo de ferver.</p>
+  </div>
+</section>
+
+<!-- 9. A HISTÓRIA: O SABER QUE ESTÁ SUMINDO -->
+<section style="background:var(--papel)">
+  <div class="wrap historia">
+    <h2 class="rv">O armário de vidrinhos da vó está sumindo em uma geração.</h2>
+    <p class="destaque rv">Sua avó sabia. Sua bisavó sabia.</p>
+    <p class="rv">Elas olhavam o quintal e sabiam qual folha ia para o vidro, qual raiz ia de molho na cachaça, qual álcool era de passar e qual era de pingar no copo. Ninguém anotava: passava de mãe para filha, na cozinha.</p>
+    <p class="rv">Quem cresceu perto dos mais velhos ainda guarda estas lembranças:</p>
+    <ul class="lembra rv">
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>O vidrinho amargo que aparecia depois do almoço de domingo, umas gotas num copo d'água e pronto.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>O álcool de arnica que a vó passava na pancada.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>A fricção de álcool de alecrim nas pernas cansadas, no fim do dia.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>O papelzinho escrito a lápis colado em cada vidro, para ninguém confundir.</span></li>
+    </ul>
+    <p class="destaque rv">Até que, em uma geração, isso sumiu. E o que sobrou foi:</p>
+    <ul class="xlist rv">
+      <li class="x">Garrafada de feira sem rótulo, sem dizer o que tem dentro, prometendo curar de tudo;</li>
+      <li class="x">Receita solta na internet mandando usar álcool de farmácia, que <b>não é de beber</b>;</li>
+      <li class="x">E você, com um pé de alecrim na janela, sem saber a medida.</li>
+    </ul>
+    <p class="rv">Não é culpa sua. Ninguém anotou a medida. E é aí que mora o perigo: erva errada, na medida errada, para a pessoa errada. É assim que gente bem-intencionada se arrisca achando que está se cuidando.</p>
+    <p class="destaque rv">Existem só dois caminhos:</p>
+    <ul class="xlist rv">
+      <li class="x">Continuar no improviso, com receita solta e garrafada sem rótulo;</li>
+      <li class="v">Ou recuperar o costume do jeito certo: com a medida escrita e os cuidados de cada vidrinho.</li>
+    </ul>
+    <div class="acao rv">
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero recuperar esse costume<small>R$ <span data-preco="completo">27,00</span>, acesso na hora</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. AMOSTRA: POR DENTRO + SUMÁRIO + CUIDADOS -->
+<section class="dentro grao">
+  <div class="wrap">
+    <h2 class="rv">Veja uma pequena amostra do que tem na Botica</h2>
     <p class="intro rv">Não é um PDF qualquer: é um livro que funciona no celular, feito para quem não tem paciência com letra miúda.</p>
     <div class="trilho rv" id="trilho">
       <div class="tela"><div class="celular"><img src="assets/dentro-1.jpg" alt="Capa do livro no celular" loading="lazy"></div><p><b>Abre no celular</b>Sem baixar nada, direto do e-mail.</p></div>
@@ -476,15 +738,17 @@ footer a{color:#d4c79f}
       <div class="tela"><div class="celular"><img src="assets/dentro-5.jpg" alt="Rótulos para imprimir" loading="lazy"></div><p><b>Rótulos prontos</b>Imprima, recorte e cole nos vidros.</p></div>
     </div>
     <div class="pontos" id="pontos" aria-hidden="true"></div>
-  </div>
-</section>
 
-<!-- 6. O QUE VOCÊ RECEBE -->
-<section class="grao">
-  <div class="wrap">
-    <div class="orn"><svg class="ic"><use href="#i-livro"/></svg></div>
-    <h2 class="rv">O que tem na Botica</h2>
-    <p class="intro rv">31 preparos em 7 partes, cada um com o passo a passo, a medida, a dica do Seu Antônio, os cuidados e quando procurar o médico.</p>
+    <ul class="amostra rv">
+      <li><b>A regra de ouro:</b> 1 para 5, 15 dias, 1 ano. Aprendeu o primeiro vidrinho, sabe fazer todos.</li>
+      <li><b>O álcool certo:</b> qual comprar, e por que o de farmácia, o de limpeza e o em gel nunca servem.</li>
+      <li><b>Como tomar:</b> quantas gotas, em quanta água e quantas vezes, escrito em cada vidrinho.</li>
+      <li><b>O amargo de domingo:</b> boldo, carqueja, espinheira-santa e os outros vidrinhos da digestão.</li>
+      <li><b>Os vidrinhos da calma:</b> camomila, melissa, maracujá, capim-santo e mulungu, para o fim do dia.</li>
+      <li><b>Os de passar:</b> arnica, alecrim e erva-baleeira, com o “não beber” bem marcado no rótulo.</li>
+      <li><b>As garrafadas, do jeito seguro:</b> e por que fugir da garrafada de feira sem rótulo.</li>
+    </ul>
+
     <div class="sumario rv">
       <h3>Sumário</h3>
       <p>A Botica dos Antigos · Edição 1.0</p>
@@ -498,100 +762,82 @@ footer a{color:#d4c79f}
         <li><span class="n">7</span><span class="t">As garrafadas, do jeito seguro</span><span class="pt"></span><span class="q">3</span></li>
       </ol>
     </div>
-    <p class="intro rv" style="margin-bottom:0">Gengibre, boldo, espinheira-santa, erva-doce, hortelã, carqueja, camomila, melissa, maracujá, capim-santo, mulungu, guaco, própolis, tomilho, romã, arnica, alecrim, erva-baleeira, calêndula, cravo, cúrcuma, canela e casca de laranja.</p>
-    <a class="btn rv" href="#oferta" style="margin-top:30px">Quero os 31 vidrinhos<small>acesso na hora, no celular</small></a>
-  </div>
-</section>
 
-<!-- 7. DIFERENCIAL: OS CUIDADOS -->
-<section style="background:var(--papel)">
-  <div class="wrap">
-    <h2 class="rv">Os cuidados que ninguém te conta</h2>
-    <p class="intro rv">Vidrinho de erva é coisa séria. Por isso cada um vem com o que a vó sabia de cabeça — e nunca escreveu.</p>
+    <h3 class="sub-tit rv">E os cuidados que ninguém te conta</h3>
     <div class="cuid">
-      <div class="rv"><i>🥃</i><span><b>O álcool certo</b><p>Só álcool de beber: de cereais, cachaça ou vodka. O livro mostra por que álcool de farmácia, de limpeza ou em gel nunca serve.</p></span></div>
+      <div class="rv"><i>🥃</i><span><b>O álcool certo</b><p>Só álcool de beber: de cereais, cachaça ou vodka. Álcool de farmácia, de limpeza ou em gel nunca serve.</p></span></div>
       <div class="rv"><i>🚫</i><span><b>Quem não pode</b><p>Grávida, criança, quem toma anticoagulante, remédio de pressão ou de dormir: cada vidrinho diz para quem pede atenção.</p></span></div>
-      <div class="rv"><i>👨‍👩‍👧</i><span><b>Versão sem álcool</b><p>Para quem não pode beber: glicerito, oximel, mel de ervas e cubinhos de chá. Toda tintura tem a sua troca.</p></span></div>
       <div class="rv"><i>🏷️</i><span><b>“Não beber” bem escrito</b><p>Os vidrinhos de passar (arnica, alecrim, calêndula) vêm marcados para ninguém confundir.</p></span></div>
     </div>
-    <p class="intro rv" style="margin:26px auto 0;font-size:.95rem">Tudo aqui é tradição popular: anda junto com o que o médico receitou, nunca no lugar.</p>
+    <p class="intro rv" style="margin:22px auto 30px;font-size:.95rem">Tudo aqui é tradição popular: anda junto com o que o médico receitou, nunca no lugar.</p>
+
+    <div class="acao rv">
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero aprender tudo isso<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
+    </div>
   </div>
 </section>
 
-<!-- 8. BÔNUS -->
+<!-- 11. PRESENTES -->
 <section class="escuro grao">
   <div class="wrap">
-    <div class="orn"><svg class="ic"><use href="#i-presente"/></svg></div>
-    <h2 class="rv">E no plano completo, 4 presentes</h2>
-    <p class="intro rv">Dentro do mesmo livro, sem precisar baixar mais nada.</p>
-    <div class="bonus rv"><img src="assets/presente-1.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>👨‍👩‍👧</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 1</span><h3>A Farmacinha Sem Álcool</h3><p>Glicerito, oximel, mel de ervas e cubinhos de chá congelado, mais a tabela de quem pode usar o quê na casa.</p><p class="valor"><s>R$ 37</s><b>grátis no completo</b></p></div></div>
-    <div class="bonus rv"><img src="assets/presente-2.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>🪴</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 2</span><h3>Do Quintal pro Vidrinho</h3><p>As 10 ervas mais fáceis de plantar em vaso ou canteiro: como plantar, quando colher e como secar para o ano todo.</p><p class="valor"><s>R$ 37</s><b>grátis no completo</b></p></div></div>
-    <div class="bonus rv"><img src="assets/presente-3.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>🎁</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 3</span><h3>Vidrinhos de Presente</h3><p>Sal de ervas, açúcar de canela, vinagre temperado, escalda-pés e sachê: presentes feitos à mão para o Natal.</p><p class="valor"><s>R$ 29</s><b>grátis no completo</b></p></div></div>
-    <div class="bonus rv"><img src="assets/presente-4.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>♻️</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 4</span><h3>Não Jogue Fora</h3><p>Casca de laranja, gengibre murcho, talo de erva, maço que sobrou: o que ia para o lixo vira vidrinho e tempero.</p><p class="valor"><s>R$ 27</s><b>grátis no completo</b></p></div></div>
-    <p class="intro rv" style="margin:26px auto 0">Tudo isso vem <b style="color:var(--mel)">de presente</b> no plano completo.</p>
+    <h2 class="rv">Garantindo hoje, você ainda ganha:</h2>
+    <p class="intro rv">4 presentes dentro do mesmo livro, sem precisar baixar mais nada.</p>
+    <div class="bonus rv"><img src="assets/presente-1.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>👨‍👩‍👧</div>'"><div><p class="selo-b"><span>🎁 PRESENTE 1</span><s>R$ 37</s><b>GRÁTIS</b></p><h3>A Farmacinha Sem Álcool</h3><p>Glicerito, oximel, mel de ervas e cubinhos de chá congelado, mais a tabela de quem pode usar o quê na casa.</p></div></div>
+    <div class="bonus rv"><img src="assets/presente-2.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>🪴</div>'"><div><p class="selo-b"><span>🎁 PRESENTE 2</span><s>R$ 37</s><b>GRÁTIS</b></p><h3>Do Quintal pro Vidrinho</h3><p>As 10 ervas mais fáceis de plantar em vaso ou canteiro: como plantar, quando colher e como secar para o ano todo.</p></div></div>
+    <div class="bonus rv"><img src="assets/presente-3.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>🎁</div>'"><div><p class="selo-b"><span>🎁 PRESENTE 3</span><s>R$ 29</s><b>GRÁTIS</b></p><h3>Vidrinhos de Presente</h3><p>Sal de ervas, açúcar de canela, vinagre temperado, escalda-pés e sachê: presentes feitos à mão para o Natal.</p></div></div>
+    <div class="bonus rv"><img src="assets/presente-4.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>♻️</div>'"><div><p class="selo-b"><span>🎁 PRESENTE 4</span><s>R$ 27</s><b>GRÁTIS</b></p><h3>Não Jogue Fora</h3><p>Casca de laranja, gengibre murcho, talo de erva, maço que sobrou: o que ia para o lixo vira vidrinho e tempero.</p></div></div>
   </div>
 </section>
 
-<!-- 9. DEPOIMENTOS (aparece sozinho quando você preencher DEPOIMENTOS lá embaixo) -->
-<section class="depos" id="depoimentos" hidden>
-  <div class="wrap"><h2>Quem já montou a sua botica</h2></div>
-  <div class="depos-janela"><div class="depos-trilho" id="deposTrilho"></div></div>
-</section>
-
-<!-- 10. OFERTA: 2 planos -->
+<!-- 12. OFERTA: tudo o que você recebe -->
 <section class="grao" id="oferta">
   <div class="wrap">
-    <div class="orn"><svg class="ic"><use href="#i-gota"/></svg></div>
-    <h2>Escolha a sua botica</h2>
-    <p class="intro">Pagamento único. Acesso na hora, no e-mail, para usar no celular e imprimir.</p>
-    <div class="planos">
-      <div class="plano top">
-        <span class="tag-top">Recomendado</span>
-        <img class="capa-oferta" src="assets/capa-botica.jpg" alt="Capa de A Botica dos Antigos" width="900" height="1200" loading="lazy" onerror="this.remove()">
-        <h3>Botica Completa</h3>
-        <p class="linha">o livro + os 4 presentes</p>
-        <ul class="leva">
-          <li><svg class="ic"><use href="#i-check"/></svg>A Botica dos Antigos: 31 preparos em 7 partes</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Meus vidrinhos, perfil de cuidado e 36 rótulos</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Presente 1: A Farmacinha Sem Álcool</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Presente 2: Do Quintal pro Vidrinho</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Presente 3: Vidrinhos de Presente</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Presente 4: Não Jogue Fora</li>
-        </ul>
-        <p class="de">Tudo isso de <s>R$ <span data-preco="antigo">197,00</span></s> por</p>
-        <p class="preco"><sup>R$</sup><span data-preco="completo">27,00</span></p>
-        <p class="unico">pagamento único · <b>acesso para sempre</b></p>
-        <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica Completa<small>com os 4 presentes</small></a>
-      </div>
-      <div class="plano basico">
-        <h3>Só o livro</h3>
-        <p class="linha">os 31 preparos, sem os presentes</p>
-        <ul class="leva">
-          <li><svg class="ic"><use href="#i-check"/></svg>A Botica dos Antigos: 31 preparos em 7 partes</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Meus vidrinhos, perfil de cuidado e 36 rótulos</li>
-          <li class="nao"><svg class="ic"><use href="#i-check"/></svg>Sem os 4 presentes (nem a versão sem álcool)</li>
-        </ul>
-        <p class="preco"><sup>R$</sup><span data-preco="basico">17,00</span></p>
-        <p class="unico">pagamento único</p>
-        <a class="btn leve" href="https://go.perfectpay.com.br/PPU38CQHULD" data-checkout="basico" data-downsell>Quero só o livro</a>
-      </div>
+    <div class="stack">
+      <img class="capa-oferta" src="assets/capa-botica.jpg" alt="Capa de A Botica dos Antigos" width="900" height="1200" loading="lazy" onerror="this.remove()">
+      <h2>Veja tudo o que você vai receber:</h2>
+      <ul class="stack-lista">
+        <li><svg class="ic"><use href="#i-check"/></svg><span>A Botica dos Antigos: 31 tinturas e garrafadas, perfil de cuidado e 36 rótulos</span><s>R$ 67</s></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span>Presente 1: A Farmacinha Sem Álcool</span><s>R$ 37</s></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span>Presente 2: Do Quintal pro Vidrinho</span><s>R$ 37</s></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span>Presente 3: Vidrinhos de Presente</span><s>R$ 29</s></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span>Presente 4: Não Jogue Fora</span><s>R$ 27</s></li>
+      </ul>
+      <p class="stack-total"><span>Total</span><s>R$ <span data-preco="antigo">197,00</span></s></p>
+      <p class="stack-hoje">Hoje você leva tudo por apenas</p>
+      <p class="preco"><sup>R$</sup><span data-preco="completo">27,00</span></p>
+      <p class="unico">pagamento único · <b>acesso imediato no e-mail</b></p>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica completa agora<small>com os 4 presentes</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
+      <div class="selos-conf"><span><svg class="ic"><use href="#i-cadeado"/></svg>Compra 100% segura</span><span><svg class="ic"><use href="#i-escudo"/></svg>Garantia de 7 dias</span><span><svg class="ic"><use href="#i-celular"/></svg>Acesso vitalício</span></div>
     </div>
-    <div class="selos-conf"><span><svg class="ic"><use href="#i-escudo"/></svg>Garantia de 7 dias</span><span><svg class="ic"><use href="#i-cadeado"/></svg>Compra segura</span><span><svg class="ic"><use href="#i-celular"/></svg>Acesso vitalício</span></div>
+    <p class="so-livro">Prefere só o livro, sem os presentes? <a href="https://go.perfectpay.com.br/PPU38CQHULD" data-checkout="basico" data-downsell>Levar só o livro por R$ <span data-preco="basico">17,00</span></a></p>
   </div>
 </section>
 
-<!-- 11. GARANTIA -->
+<!-- 13. GARANTIA -->
 <section style="background:var(--papel);padding:56px 0">
   <div class="wrap garantia">
     <div class="selo-garantia rv"><span><b>7</b>dias de<br>garantia</span></div>
     <div class="rv">
-      <h2>Risco zero para você</h2>
-      <p>Abra, leia, faça o seu primeiro vidrinho. Se em 7 dias achar que não valeu, é só pedir o reembolso e devolvemos cada centavo, sem perguntas.</p>
+      <h2>Experimente por 7 dias sem preocupação</h2>
+      <p>Abra o livro, escolha o seu primeiro vidrinho, ponha de molho. Se em até 7 dias você achar que não é para você, por qualquer motivo, é só pedir o reembolso e devolvemos todo o seu dinheiro. Sem perguntas e sem burocracia.</p>
+      <p class="forte">O risco é todo nosso.</p>
     </div>
   </div>
 </section>
 
-<!-- 12. PARA QUEM É / NÃO É -->
+<!-- 13b. DEPOIMENTOS EM PRINT/FOTO (fica escondido até você preencher PRINTS lá embaixo) -->
+<section class="prints-sec" id="prints" hidden>
+  <div class="wrap">
+    <h2>Veja o que o pessoal está falando</h2>
+    <p class="intro">Mensagens de quem já montou a sua botica.</p>
+  </div>
+  <div class="prints-trilho" id="printsTrilho"></div>
+  <p class="prints-dica">Arraste para o lado para ver mais →</p>
+</section>
+
+<!-- 14. PARA QUEM É / NÃO É -->
 <section class="grao">
   <div class="wrap">
     <h2 class="rv">Para quem é</h2>
@@ -609,11 +855,26 @@ footer a{color:#d4c79f}
   </div>
 </section>
 
-<!-- 13. FAQ -->
+<!-- 15. CARTA DO SEU ANTÔNIO -->
 <section style="background:var(--papel)">
+  <div class="wrap carta rv">
+    <img src="assets/avatar-antonio.jpg" alt="Seu Antônio" width="96" height="96" loading="lazy" onerror="this.remove()">
+    <h2>Por que eu fiz A Botica dos Antigos</h2>
+    <p>Eu cresci vendo minha avó encher o armário de vidrinhos. Cada um com seu papelzinho escrito a lápis, cada um com a sua hora de usar.</p>
+    <p>Hoje muita gente da minha idade lembra desse armário, mas ninguém anotou a medida. E o que eu vejo por aí me preocupa: garrafada sem rótulo prometendo curar de tudo, receita mandando usar álcool de farmácia, tintura com álcool sendo dada para criança.</p>
+    <p>Então eu juntei neste livro o jeito certo de fazer: a erva, a medida, os dias de molho, como tomar e, principalmente, <b>quem não pode</b>. Para cada vidrinho com álcool, tem a versão sem álcool.</p>
+    <p>Não é remédio de médico, e eu escrevo isso em todo vidrinho. É o costume dos antigos, devolvido para dentro da sua casa.</p>
+    <p class="assina">Seu Antônio<small>do Manual dos Antigos</small></p>
+  </div>
+</section>
+
+<!-- 16. FAQ -->
+<section class="grao">
   <div class="wrap faq">
-    <h2 class="rv" style="margin-bottom:26px">Perguntas que o pessoal faz</h2>
+    <h2 class="rv" style="margin-bottom:26px">Dúvidas frequentes</h2>
     <details><summary>Como eu recebo?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Assim que o pagamento é aprovado, o acesso chega no seu e-mail. Abre direto no celular, sem baixar aplicativo. Dá para salvar em PDF e imprimir também.</p></div></details>
+    <details><summary>Eu nunca fiz nada disso. Vou conseguir?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Vai. A primeira parte do livro ensina o jeito certo do zero, e todo vidrinho segue a mesma regra: erva, álcool, 15 dias de molho, coa e guarda. O livro ainda avisa o dia de coar.</p></div></details>
+    <details><summary>Preciso comprar coisa cara?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Não. Um vidro com tampa, a erva seca e o álcool de cereais. Para guardar, um vidrinho âmbar de conta-gotas, que se acha em loja de embalagem ou na internet.</p></div></details>
     <details><summary>Precisa de álcool? Qual eu compro?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>As tinturas usam álcool de beber: álcool de cereais (vende em casa de produtos naturais e cerealista), cachaça ou vodka. O livro explica a mistura e mostra por que álcool de farmácia ou de limpeza nunca serve.</p></div></details>
     <details><summary>E quem não pode tomar álcool?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>O primeiro presente, A Farmacinha Sem Álcool, ensina a versão de cada vidrinho sem álcool: na glicerina, no vinagre com mel, no mel ou em cubinhos de chá congelado. Vem no plano completo.</p></div></details>
     <details><summary>Onde eu acho as ervas?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Quase todas estão secas em casa de produtos naturais, feira e mercado (camomila, boldo, erva-doce, canela, cravo, gengibre). Várias dá para plantar em vaso, e o segundo presente ensina como.</p></div></details>
@@ -624,28 +885,34 @@ footer a{color:#d4c79f}
   </div>
 </section>
 
-<!-- 14. CTA FINAL -->
+<!-- 17. CTA FINAL -->
 <section class="escuro grao final">
   <div class="wrap">
-    <h2>O armário da vó não precisa sumir junto com ela</h2>
-    <p class="intro">O primeiro vidrinho leva 10 minutos para preparar. Daqui a 15 dias, ele está pronto no seu armário, e dura um ano inteiro.</p>
+    <h2>Daqui a 15 dias, o seu primeiro vidrinho pode estar pronto.</h2>
+    <p class="intro">Um almoço pesado. Uma perna cansada no fim do dia. Um presente de Natal que você queria fazer com as mãos.</p>
+    <p class="intro">Você pode continuar como sempre: procurando receita solta na internet, sem saber a medida. Ou abrir o armário, pegar o vidrinho âmbar que você mesmo preparou e cuidar de quem você ama, como a vó fazia.</p>
+    <p class="intro"><b style="color:#fbf2da">O costume é o mesmo. A escolha é sua. E hoje custa menos que uma pizza.</b></p>
+    <div class="preco-final">
+      <p class="preco"><sup>R$</sup><span data-preco="completo">27,00</span></p>
+      <p class="unico">pagamento único · acesso na hora</p>
+    </div>
     <div class="acao">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica Completa<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
-      <div class="seguro"><span><svg class="ic"><use href="#i-escudo"/></svg>7 dias de garantia</span><span><svg class="ic"><use href="#i-raio"/></svg>Acesso imediato</span></div>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero fazer meus vidrinhos<small>com os 4 presentes</small></a>
+      <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
 </section>
 
-<!-- 15. RODAPÉ -->
+<!-- 18. RODAPÉ -->
 <footer>
   <div class="wrap">
-    <p>A Botica dos Antigos · Conteúdo de tradição popular, com fins informativos. Não é remédio de médico e não substitui a orientação do seu doutor. As tinturas e garrafadas contêm álcool.</p>
+    <p>Aviso: A Botica dos Antigos é conteúdo de tradição popular, com fins informativos. Não é remédio de médico e não substitui a orientação do seu doutor. As tinturas e garrafadas contêm álcool.</p>
     <p>Pagamento processado com segurança pela plataforma de checkout. © A Botica dos Antigos. Todos os direitos reservados.</p>
     <p id="suporte" hidden>Dúvidas antes de comprar? Escreva para <a href="#"></a></p>
   </div>
 </footer>
 
-<!-- 16. POPUP DOWNSELL: aparece quando a pessoa escolhe "só o livro" -->
+<!-- 19. POPUP DOWNSELL: aparece quando a pessoa escolhe "só o livro" -->
 <div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTit">
   <div class="pop-caixa">
     <button class="pop-x" id="popX" aria-label="Fechar">×</button>
@@ -685,6 +952,20 @@ const DEPOIMENTOS = [
   { nome: "", idade: "", cidade: "", foto: "", texto: "" },
 ];
 /* ===================== FIM DOS DEPOIMENTOS ===================== */
+
+/* ==========================================================================
+   DEPOIMENTOS EM PRINT/FOTO — SÓ PRINTS REAIS, COM AUTORIZAÇÃO DE QUEM MANDOU
+   1. Salve as imagens na pasta assets/depoimentos/ (ex.: print-1.jpg)
+   2. Escreva o nome do arquivo entre aspas abaixo. Vazio não aparece.
+   Se todos ficarem vazios, a seção inteira fica escondida.
+   Dica: apague ou borre o número de telefone e a foto de quem mandou.
+   ========================================================================== */
+const PRINTS = [
+  "",
+  "",
+  "",
+];
+/* ===================== FIM DOS PRINTS ===================== */
 CONFIG.depoimentos = DEPOIMENTOS
   .filter(d => String(d.nome || '').trim() && String(d.texto || '').trim())
   .map(d => ({ ...d, foto: d.foto && !d.foto.includes('/') ? 'assets/depoimentos/' + d.foto : d.foto }));
@@ -746,6 +1027,20 @@ if (CONFIG.depoimentos.length) {
   montar();
   let larg = innerWidth; addEventListener('resize', () => { if (innerWidth !== larg) { larg = innerWidth; montar(); } });
 }
+
+// Depoimentos em print (carrossel de arrastar; some se nenhuma imagem carregar)
+(function () {
+  const lista = PRINTS.map(f => String(f || '').trim()).filter(Boolean).map(f => f.includes('/') ? f : 'assets/depoimentos/' + f);
+  if (!lista.length) return;
+  const sec = $('#prints'), trilho = $('#printsTrilho');
+  let vivos = lista.length;
+  lista.forEach(src => {
+    const img = new Image(); img.src = src; img.alt = 'Depoimento de cliente'; img.loading = 'lazy'; img.decoding = 'async';
+    img.onerror = () => { img.remove(); if (--vivos === 0) sec.hidden = true; };
+    trilho.appendChild(img);
+  });
+  sec.hidden = false;
+})();
 
 // Suporte no rodapé
 if (CONFIG.suporte) { const sup = $('#suporte'), a = sup.querySelector('a'); a.href = 'mailto:' + CONFIG.suporte; a.textContent = CONFIG.suporte; sup.hidden = false; }
