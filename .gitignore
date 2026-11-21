@@ -1,0 +1,5 @@
+# Originais em PNG (21 MB): a pagina usa as versoes otimizadas em JPG
+assets/originais/
+# Anotacoes internas, nao fazem parte do site
+prompts-imagens.md
+*.mp4

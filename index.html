@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Botica dos Antigos | 31 tinturas e garrafadas com a medida certa</title>
+<meta name="description" content="31 tinturas e garrafadas dos antigos, com a medida certa e os cuidados de cada vidrinho. Livro digital no celular, com versão sem álcool e 4 presentes.">
+<meta name="theme-color" content="#2e1a0b">
+<link rel="preload" as="image" href="assets/hero-mockup.jpg">
+<script>if('IntersectionObserver' in window&&!/semfx/.test(location.search))document.documentElement.className='js'</script>
+
+<!-- META PIXEL: cole seu pixel aqui (o mesmo do Manual serve, se for a mesma conta) -->
+<!-- UTMIFY: cole seu pixel aqui -->
+
+<style>
+/* Paleta tirada das capas: mata fechada, folha, pergaminho envelhecido, mel e ouro velho */
+:root{
+  --mata:#173a22; --mata-2:#0f2918; --folha:#2f5a34; --folha-2:#4b7a45;
+  --perg:#f3e7c9; --perg-2:#e9d9b0; --papel:#fbf5e6;
+  --mel:#e9a93b; --mel-h:#d69222; --mel-t:#1d2b12;
+  --ouro:#b8913f; --ouro-cl:#e2c784;
+  --tinta:#2b2418; --tinta-2:#5c4f3a; --risco:#a23b2a;
+  --serif:"Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style","URW Palladio L",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,Arial,sans-serif;
+  --ease:cubic-bezier(.22,.8,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:58px;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:18px;line-height:1.6;color:var(--tinta);background:var(--perg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mel);outline-offset:3px;border-radius:6px}
+.ic{width:1em;height:1em;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em}
+
+.wrap{max-width:620px;margin:0 auto;padding:0 20px}
+section{padding:64px 0;position:relative}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.15;color:var(--mata);letter-spacing:-.005em}
+h2{font-size:clamp(1.7rem,6vw,2.35rem);text-align:center;margin-bottom:12px;text-wrap:balance}
+.intro{text-align:center;color:var(--tinta-2);font-size:1.06rem;max-width:34em;margin:0 auto 34px;text-wrap:pretty}
+.grao{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .08 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.escuro{background-color:var(--mata);color:#efe4c6}
+.escuro h2,.escuro h3{color:#fbf2da}
+.escuro .intro{color:#d4c79f}
+
+/* Ornamento de folhas entre seções */
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--ouro);margin:0 auto 18px}
+.orn::before,.orn::after{content:"";height:1px;width:56px;background:linear-gradient(90deg,transparent,currentColor)}
+.orn::after{transform:scaleX(-1)}
+.orn svg{width:22px;height:22px}
+
+/* BARRA DO TOPO */
+
+/* BOTÃO */
+.btn{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:62px;text-align:center;text-decoration:none;background:var(--mel);color:var(--mel-t);font-weight:800;font-size:1.12rem;line-height:1.2;padding:16px 20px;border-radius:14px;border:0;cursor:pointer;box-shadow:0 5px 0 #b67812,0 14px 28px -8px rgba(233,169,59,.55);transition:transform .18s var(--ease),box-shadow .18s,background .18s}
+.btn small{font-weight:600;font-size:.82rem;opacity:.85;margin-top:3px}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:brilho 4.5s 2s infinite}
+.btn:hover{background:var(--mel-h);transform:translateY(-2px)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #b67812}
+@keyframes brilho{0%,70%{left:-60%}100%{left:130%}}
+.seguro{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:.92rem;color:var(--tinta-2)}
+.seguro span{display:inline-flex;align-items:center;gap:6px}
+.seguro .ic{color:var(--folha)}
+.escuro .seguro,.hero .seguro{color:#cfc29a}
+.escuro .seguro .ic,.hero .seguro .ic{color:var(--mel)}
+
+/* TOPO: a identidade da página (mata, ouro, mel) no formato da referência:
+   barra com a foto, frase curta e o vídeo ocupando quase a tela toda */
+.perfil{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:10px;height:56px;padding:0 14px;background:var(--mata-2);border-bottom:1px solid rgba(226,199,132,.3)}
+.perfil img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px var(--mata-2),0 0 0 3.5px var(--ouro)}
+.perfil b{display:block;font-family:var(--serif);font-size:1.08rem;font-weight:700;color:#fbf2da;line-height:1.15}
+.perfil small{display:block;font-size:.76rem;color:var(--ouro-cl);line-height:1.25}
+.hero{position:relative;padding:10px 0 12px;min-height:calc(100vh - 56px);min-height:calc(100svh - 56px);display:flex;flex-direction:column;justify-content:flex-start;background:radial-gradient(120% 70% at 50% 30%,#245032 0%,var(--mata) 55%,var(--mata-2) 100%);color:#efe4c6;text-align:center;overflow:hidden}
+.hero .ramo{position:absolute;width:190px;color:rgba(226,199,132,.12);pointer-events:none}
+.hero .ramo.e{left:-60px;top:20px;transform:rotate(-18deg)}
+.hero .ramo.d{right:-60px;top:260px;transform:scaleX(-1) rotate(-18deg)}
+.hero .wrap{position:relative;padding:0 10px}
+.hero-tit{font-family:var(--serif);font-weight:700;font-size:clamp(1.18rem,5vw,1.6rem);line-height:1.15;color:#fbf2da;max-width:20em;margin:0 auto 2px;text-wrap:balance}
+.hero-sub{font-size:.9rem;line-height:1.3;color:#e3d6ae;max-width:26em;margin:0 auto 10px;text-wrap:balance}
+/* O vídeo ocupa toda a largura que a altura da tela permite, deixando lugar para o botão embaixo */
+.vsl-moldura{position:relative;width:min(100%,460px,calc((100vh - 244px) * 9 / 16));width:min(100%,460px,calc((100svh - 244px) * 9 / 16));min-width:180px;margin:0 auto 12px;padding:3px;border-radius:16px;background:linear-gradient(160deg,var(--ouro-cl),var(--ouro) 45%,#8a6a2a);box-shadow:0 24px 50px -20px rgba(0,0,0,.75)}
+.vsl{position:relative;aspect-ratio:9/16;overflow:hidden;background:#0b1a10;border-radius:13px}
+/* Barra de minutagem: anda rápido no começo e desacelera (não é a posição real do vídeo) */
+.vsl .tempo{position:absolute;left:0;right:0;bottom:0;z-index:4;height:9px;background:rgba(0,0,0,.35);pointer-events:none}
+.vsl .tempo i{display:block;height:100%;width:0;background:var(--mel);box-shadow:0 0 10px rgba(233,169,59,.8);transition:width .5s linear}
+.vsl video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0b1a10}
+.vsl .play{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:0;cursor:pointer;color:#fff;font:inherit;background:linear-gradient(to top,rgba(10,25,14,.55),rgba(10,25,14,.05) 55%),url(assets/vsl-capa.jpg) center/cover}
+.vsl .play .bola{width:76px;height:76px;border-radius:50%;background:var(--mel);color:var(--mel-t);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(233,169,59,.6);animation:onda 2s infinite}
+.vsl .play .bola svg{width:30px;height:30px;fill:currentColor;stroke:none;margin-left:4px}
+.vsl .play .bola .som{display:none;width:30px;height:30px;margin:0}
+.vsl .play b{font-size:1rem;font-weight:700;background:rgba(15,41,24,.75);border:1px solid rgba(226,199,132,.45);border-radius:999px;padding:6px 16px}
+.vsl .play.oculto{display:none}
+.vsl .play.mudo{background:transparent}
+.vsl .play.mudo .bola{width:64px;height:64px}
+.vsl .play.mudo .bola .tri{display:none}
+.vsl .play.mudo .bola .som{display:block;fill:none;stroke:currentColor;stroke-width:2.2}
+@keyframes onda{0%{box-shadow:0 0 0 0 rgba(233,169,59,.55)}70%{box-shadow:0 0 0 22px rgba(233,169,59,0)}100%{box-shadow:0 0 0 0 rgba(233,169,59,0)}}
+.vsl .trava{position:absolute;inset:0;z-index:2;display:none;align-items:center;justify-content:center;background:transparent;border:0;cursor:pointer}
+.vsl .trava.on{display:flex}
+.vsl .trava .bola{display:none;width:70px;height:70px;border-radius:50%;background:rgba(233,169,59,.95);color:var(--mel-t);place-items:center}
+.vsl .trava .bola svg{width:28px;height:28px;fill:currentColor;stroke:none;margin-left:4px}
+.vsl .trava.pausado{background:rgba(0,0,0,.35)}
+.vsl .trava.pausado .bola{display:grid}
+.hero .acao{max-width:460px;margin:0 auto}
+.hero .acao .btn{min-height:54px;padding:12px 18px}
+
+
+
+/* PROMESSA */
+.promessa{text-align:center;padding-top:56px}
+.promessa h1{font-size:clamp(2rem,7.4vw,3.05rem);margin-bottom:16px;text-wrap:balance}
+.promessa .sub{color:var(--tinta-2);font-size:1.12rem;max-width:32em;margin:0 auto 32px;text-wrap:pretty}
+.fatos{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--perg-2);border-bottom:1px solid var(--perg-2)}
+.fatos div{padding:16px 6px}
+.fatos div+div{border-left:1px solid var(--perg-2)}
+.fatos b{display:block;font-family:var(--serif);font-size:2rem;color:var(--folha);line-height:1}
+.fatos span{font-size:.92rem;color:var(--tinta-2)}
+.etiqueta{display:inline-block;background:var(--mata);color:var(--mel);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:5px 14px;margin-bottom:14px}
+.quando{max-width:420px;margin:0 auto 30px;background:var(--papel);border:1px solid var(--perg-2);border-radius:22px;padding:18px 14px 14px;box-shadow:0 22px 40px -24px rgba(23,58,34,.55);text-align:left}
+.quando-tit{font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--folha);margin:0 4px 12px}
+.quando-grade{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quando-grade span{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--perg-2);border-radius:14px;padding:10px;font-size:.84rem;font-weight:700;line-height:1.25;color:var(--tinta)}
+.quando-grade i{font-style:normal;font-size:1.4rem;flex:none}
+.quando-mais{text-align:center;font-size:.85rem;color:var(--tinta-2);margin-top:12px}
+.tres{list-style:none;display:grid;gap:14px;max-width:420px;margin:0 auto 32px;text-align:left}
+.tres li{display:flex;gap:14px;align-items:flex-start}
+.tres li>b{flex:0 0 36px;height:36px;border-radius:50%;background:var(--mel);color:var(--mel-t);display:grid;place-items:center;font-family:var(--serif);font-size:1.1rem}
+.tres strong{display:block;color:var(--mata);font-family:var(--serif);font-size:1.08rem;line-height:1.3}
+.tres span{font-size:.98rem;color:var(--tinta-2);line-height:1.45}
+
+
+/* LEMBRANÇAS */
+.lembra{list-style:none;max-width:30em;margin:0 auto 36px}
+.lembra li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--perg-2);font-size:1.04rem}
+.lembra li:last-child{border-bottom:0}
+.lembra .ic{width:22px;height:22px;color:var(--folha);margin-top:3px}
+.citacao{position:relative;background:var(--mata);color:#efe4c6;border-radius:20px;padding:34px 26px 28px;font-size:1.06rem}
+.citacao::before{content:"\201C";position:absolute;top:-30px;left:18px;font-family:var(--serif);font-size:7rem;line-height:1;color:var(--mel)}
+.citacao p+p{margin-top:12px}
+.citacao strong{color:var(--ouro-cl)}
+
+/* POR DENTRO (prints reais) */
+.dentro{overflow:hidden}
+.trilho{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 20px 22px;margin:0 -20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.trilho::-webkit-scrollbar{display:none}
+.tela{flex:0 0 68%;max-width:250px;scroll-snap-align:center;text-align:center}
+.celular{position:relative;border-radius:30px;padding:9px;background:#1a1a17;box-shadow:0 22px 40px -18px rgba(23,58,34,.55),inset 0 0 0 2px #3a382f}
+.celular img{border-radius:22px;aspect-ratio:480/985;object-fit:cover;object-position:top;width:100%;background:#f7f1e3}
+.celular::before{content:"";position:absolute;top:15px;left:50%;width:56px;height:6px;margin-left:-28px;border-radius:9px;background:#1a1a17;z-index:2;opacity:.9}
+.tela p{margin-top:14px;font-size:1rem;color:var(--tinta-2);line-height:1.4}
+.tela p b{display:block;color:var(--mata);font-family:var(--serif);font-size:1.08rem}
+.pontos{display:flex;justify-content:center;gap:8px}
+.pontos button{width:9px;height:9px;border-radius:9px;border:0;background:var(--perg-2);cursor:pointer;transition:width .3s var(--ease),background .3s}
+.pontos button.on{width:26px;background:var(--folha)}
+
+/* SUMÁRIO DO LIVRO */
+.livro{display:grid;grid-template-columns:132px 1fr;gap:22px;align-items:center;margin-bottom:34px}
+.livro img{border-radius:6px;box-shadow:-6px 14px 26px -8px rgba(23,58,34,.5);transform:rotate(-3deg)}
+.livro ul{list-style:none;display:grid;gap:9px;font-size:.97rem}
+.livro li{display:flex;gap:10px;align-items:flex-start;line-height:1.35}
+.livro li .ic{color:var(--folha);margin-top:2px;width:19px;height:19px}
+.sumario{background:var(--papel);border:1px solid var(--perg-2);border-radius:6px;padding:26px 22px 18px;box-shadow:0 1px 0 #fff inset,0 18px 40px -26px rgba(43,36,24,.45);margin-bottom:30px}
+.sumario h3{font-size:1.35rem;text-align:center;margin-bottom:4px}
+.sumario > p{text-align:center;font-size:.88rem;color:var(--tinta-2);margin-bottom:16px}
+.sumario ol{list-style:none}
+.sumario li{display:flex;align-items:baseline;gap:10px;padding:8px 0;font-family:var(--serif);font-size:1.02rem;color:var(--tinta)}
+.sumario li .n{flex:0 0 2.2em;color:var(--ouro);font-weight:700;text-align:right}
+.sumario li .t{flex:0 1 auto}
+.sumario li .pt{flex:1 1 auto;border-bottom:2px dotted var(--perg-2);transform:translateY(-4px);min-width:16px}
+.sumario li .q{flex:0 0 auto;font-family:var(--sans);font-size:.88rem;color:var(--tinta-2)}
+
+/* VERSÃO 2.0 */
+.recursos{display:grid;grid-template-columns:1fr 1fr;gap:26px 22px;margin-bottom:38px}
+.recursos div{display:flex;flex-direction:column;gap:6px}
+.recursos .ic{width:30px;height:30px;color:var(--mel);stroke-width:1.7;margin-bottom:4px}
+.recursos b{color:#fbf2da;font-size:1.02rem;line-height:1.3}
+.recursos p{color:#d9cca4;font-size:.98rem;line-height:1.45}
+
+/* BÔNUS */
+.bonus{display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(226,199,132,.18)}
+.bonus:last-of-type{border-bottom:0}
+.bonus img{border-radius:5px;box-shadow:-5px 12px 22px -6px rgba(0,0,0,.6);transition:transform .35s var(--ease)}
+.bonus:hover img{transform:rotate(-3deg) translateY(-3px)}
+.selo{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:var(--mel);margin-bottom:4px}
+.bonus h3{font-size:1.25rem;margin-bottom:6px}
+.bonus p{font-size:.98rem;color:#d9cca4;line-height:1.45}
+.bonus .valor{margin-top:8px;font-size:.88rem;color:#cdbf95}
+.bonus .valor s{color:#e48d7b;margin-right:6px}
+.bonus .valor b{color:#a7d79b}
+
+/* OFERTA: rótulo de botica */
+.rotulo{position:relative;background:var(--papel);border-radius:22px;padding:34px 22px 26px;text-align:center;box-shadow:0 30px 60px -30px rgba(23,58,34,.6)}
+.rotulo::before{content:"";position:absolute;inset:8px;border:1.5px solid var(--ouro);border-radius:16px;pointer-events:none}
+.rotulo::after{content:"";position:absolute;inset:13px;border:1px solid rgba(184,145,63,.4);border-radius:12px;pointer-events:none}
+.leque{display:flex;justify-content:center;align-items:flex-end;height:150px;margin:6px 0 20px}
+.leque img{width:82px;border-radius:4px;box-shadow:-4px 10px 18px -6px rgba(0,0,0,.45);margin:0 -14px;transition:transform .5s var(--ease)}
+.leque img:nth-child(1){transform:rotate(-12deg) translateY(10px)}
+.leque img:nth-child(2){width:104px;z-index:2;transform:translateY(-4px)}
+.leque img:nth-child(3){transform:rotate(6deg) translateY(4px)}
+.leque img:nth-child(4){transform:rotate(14deg) translateY(14px)}
+.rotulo:hover .leque img:nth-child(1){transform:rotate(-16deg) translate(-8px,10px)}
+.rotulo:hover .leque img:nth-child(4){transform:rotate(18deg) translate(8px,14px)}
+.rotulo h2{margin-bottom:4px}
+.rotulo .linha{color:var(--tinta-2);font-size:.95rem;margin-bottom:20px}
+.leva{list-style:none;text-align:left;max-width:360px;margin:0 auto 22px;display:grid;gap:10px}
+.leva li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;line-height:1.35}
+.leva .ic{color:#fff;background:var(--folha);border-radius:50%;padding:4px;width:22px;height:22px;stroke-width:3;margin-top:1px}
+.de{color:var(--tinta-2);font-size:.95rem}
+.de s{text-decoration-thickness:2px;text-decoration-color:#b5452f}
+.de s{color:var(--risco)}
+.preco{font-family:var(--serif);color:var(--mata);font-weight:700;font-size:4rem;line-height:1;margin:6px 0 4px;letter-spacing:-.02em}
+.preco sup{font-size:1.3rem;vertical-align:top;position:relative;top:12px;margin-right:4px}
+.unico{font-size:.88rem;color:var(--tinta-2);margin-bottom:20px}
+.garantia-mini{display:flex;gap:10px;align-items:flex-start;text-align:left;max-width:380px;margin:0 auto 18px;background:#eef3e6;border:1px solid #cfdcc0;border-radius:12px;padding:12px 14px;font-size:.95rem;line-height:1.4}
+.garantia-mini .ic{width:22px;height:22px;color:var(--folha);margin-top:1px}
+.unico b{color:var(--folha)}
+.depois{margin-top:30px;background:var(--papel);border:1px solid var(--perg-2);border-radius:18px;padding:24px 20px}
+.depois h3{font-size:1.25rem;text-align:center;margin-bottom:16px}
+.depois ol{list-style:none;display:grid;gap:14px}
+.depois li{display:flex;gap:14px;align-items:flex-start;font-size:1rem;line-height:1.45}
+.depois .num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--mata);color:var(--mel);display:grid;place-items:center;font-family:var(--serif);font-weight:700}
+
+/* DEPOIMENTOS: faixa pequena que corre sozinha; não dá para arrastar nem tocar */
+.depos{padding:40px 0;background:var(--papel);overflow:hidden}
+.depos h2{font-size:1.35rem;margin-bottom:18px}
+.depos-janela{overflow:hidden;pointer-events:none;user-select:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.depos-trilho{display:flex;width:max-content;will-change:transform}
+.depos-trilho .depo{margin-right:14px}
+.depo{flex:0 0 250px;background:#fff;border:1px solid var(--perg-2);border-radius:14px;padding:14px 16px}
+.depo-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.depo-av{position:relative;flex:0 0 46px;width:46px;height:46px;border-radius:50%;overflow:hidden;background:var(--folha);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.05rem;box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--ouro)}
+.depo-av img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.depo-av img:not(.ok){opacity:0}
+.depo-top b{display:block;font-size:.92rem;line-height:1.2}
+.depo-top small{display:block;font-size:.76rem;color:#6b6152;line-height:1.3}
+.depo-top i{font-style:normal;color:#e0a100;font-size:.8rem;letter-spacing:1px}
+.depo p{font-size:.9rem;line-height:1.4;color:var(--tinta)}
+
+/* PARA QUEM É */
+.para-quem{list-style:none;max-width:32em;margin:0 auto 26px;display:grid;gap:14px}
+.para-quem li{display:flex;gap:12px;align-items:flex-start;font-size:1.05rem;line-height:1.45}
+.para-quem .ic{flex:0 0 26px;width:26px;height:26px;padding:5px;border-radius:50%;background:var(--folha);color:#fff;stroke-width:3;margin-top:1px}
+
+/* GARANTIA */
+.garantia{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center}
+.garantia h2{text-align:left;font-size:1.6rem;margin-bottom:8px}
+.garantia p{color:var(--tinta-2);font-size:1rem}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--perg-2)}
+.faq details:first-of-type{border-top:1px solid var(--perg-2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 2px;font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--mata);line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{width:22px;height:22px;color:var(--ouro);transition:transform .3s var(--ease)}
+.faq details[open] summary .ic{transform:rotate(180deg)}
+.faq .resp{overflow:hidden}
+.faq .resp p{padding:0 2px 20px;color:var(--tinta-2);font-size:1rem}
+
+/* CTA FINAL */
+.final{text-align:center}
+.final h2{font-size:clamp(1.8rem,6.5vw,2.5rem)}
+.final .acao{max-width:440px;margin:0 auto}
+
+footer{background:var(--mata-2);color:#a99d7c;text-align:center;font-size:.8rem;padding:30px 0 34px}
+footer p+p{margin-top:10px}
+footer a{color:#d4c79f}
+
+
+/* Entrada suave das seções */
+/* Liberação: o resto da página (e o botão do topo) só aparece quando o vídeo chega na parte do manual */
+.trancado{display:none!important}
+.liberando{animation:surge 1s var(--ease)}
+@keyframes surge{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.aviso-vsl{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;background:var(--mata-2);color:#d4c79f;padding:16px 20px 24px;font-size:.88rem;border-top:1px solid rgba(226,199,132,.2)}
+.aviso-vsl .ic{width:16px;height:16px;flex:none;color:var(--mel)}
+
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.vis{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+@media (min-width:700px){
+  section{padding:84px 0}
+  .tela{flex-basis:230px}
+  .trilho{justify-content:center}
+}
+@media (max-width:370px){
+  body{font-size:17px}
+  .livro{grid-template-columns:100px 1fr}
+  .recursos{grid-template-columns:1fr}
+  .bonus{grid-template-columns:96px 1fr}
+  .garantia{grid-template-columns:1fr;text-align:center}
+  .garantia svg{margin:0 auto}
+  .garantia h2{text-align:center}
+  .barra{font-size:.76rem}
+}
+
+/* ===== A BOTICA: troca o verde-mata por âmbar de vidro de botica, mantendo a família do Manual ===== */
+:root{--mata:#3b220e;--mata-2:#2e1a0b;--folha:#5a6b2e;--folha-2:#7a8a45}
+.hero{min-height:0;padding:34px 0 44px;background:radial-gradient(120% 70% at 50% 25%,#6b3f17 0%,var(--mata) 55%,var(--mata-2) 100%)}
+.hero .etiqueta{background:rgba(233,169,59,.15);border:1px solid rgba(233,169,59,.4)}
+.aspas{font-family:var(--serif);font-weight:700;font-size:clamp(1.75rem,7vw,2.6rem);line-height:1.15;color:#fbf2da;margin:4px auto 14px;max-width:16em;text-wrap:balance}
+.aspas em{font-style:normal;color:var(--mel)}
+.quem{font-size:.92rem;color:var(--ouro-cl);margin-bottom:16px}
+.hero .sub{font-size:1.06rem;color:#e3d6ae;max-width:30em;margin:0 auto 22px;text-wrap:pretty}
+.hero .acao{max-width:440px}
+.capa-box{max-width:270px;margin:28px auto 6px}
+.capa-box:has(.mockup){max-width:400px}
+.capa-box img.mockup{transform:none;border-radius:16px;box-shadow:0 24px 50px -20px rgba(0,0,0,.75)}
+.capa-oferta{width:150px;margin:0 auto 16px;border-radius:6px;box-shadow:-6px 14px 26px -8px rgba(59,34,14,.55);transform:rotate(-2deg)}
+.capa-box img{border-radius:8px;box-shadow:-8px 18px 34px -10px rgba(0,0,0,.7);transform:rotate(-2deg)}
+/* capa desenhada (aparece enquanto não houver a imagem assets/capa-botica.jpg) */
+.capa-css{aspect-ratio:3/4;border-radius:6px 12px 12px 6px;background:radial-gradient(90% 60% at 50% 30%,#7a4a1c,#3b220e 70%);border:2px solid var(--ouro);box-shadow:-8px 18px 34px -10px rgba(0,0,0,.7),inset 8px 0 0 rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:18px;text-align:center;color:#fbf2da;transform:rotate(-2deg)}
+.capa-css .v{font-size:3.4rem;line-height:1}
+.capa-css small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mel);font-weight:800}
+.capa-css b{font-family:var(--serif);font-size:1.9rem;line-height:1.05}
+.capa-css span{font-size:.78rem;color:var(--ouro-cl);margin-top:6px}
+.hero .fatos{margin-top:30px;border-color:rgba(226,199,132,.25)}
+.hero .fatos div+div{border-color:rgba(226,199,132,.25)}
+.hero .fatos b{color:var(--mel)}
+.hero .fatos span{color:#d9cca4}
+.faixa-topo{background:#7a2e1c;color:#fbe9d2;text-align:center;font-size:.8rem;font-weight:700;padding:7px 12px;letter-spacing:.02em}
+.regra{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 auto 34px;max-width:460px}
+.regra div{background:var(--papel);border:1px solid var(--perg-2);border-radius:16px;padding:16px 8px;text-align:center;font-size:.86rem;line-height:1.35;color:var(--tinta-2)}
+.regra b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--mata);line-height:1.1}
+.cuid{display:grid;gap:14px;max-width:30em;margin:0 auto}
+.cuid div{display:flex;gap:14px;align-items:flex-start;background:var(--papel);border:1px solid var(--perg-2);border-radius:16px;padding:16px}
+.cuid i{font-style:normal;font-size:1.7rem;flex:none;line-height:1}
+.cuid b{display:block;font-family:var(--serif);color:var(--mata);font-size:1.1rem;margin-bottom:2px}
+.cuid p{font-size:.97rem;color:var(--tinta-2);line-height:1.45}
+.bonus .capinha{width:118px;aspect-ratio:3/4;border-radius:5px;background:linear-gradient(160deg,#6b4c1a,#3b220e);border:1.5px solid var(--ouro);display:grid;place-items:center;font-size:2.6rem;box-shadow:-5px 12px 22px -6px rgba(0,0,0,.6)}
+/* planos */
+.planos{display:grid;gap:18px;max-width:460px;margin:0 auto}
+.plano{position:relative;background:var(--papel);border:1.5px solid var(--perg-2);border-radius:20px;padding:24px 20px 20px;text-align:center}
+.plano.top{border:2.5px solid var(--mel);box-shadow:0 30px 60px -30px rgba(59,34,14,.6);padding-top:30px}
+.plano .tag-top{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--mel);color:var(--mel-t);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:5px 14px;white-space:nowrap}
+.plano h3{font-size:1.3rem;margin-bottom:4px}
+.plano .linha{color:var(--tinta-2);font-size:.92rem;margin-bottom:14px}
+.plano .preco{font-size:3.2rem}
+.plano.basico .preco{font-size:2.4rem;color:var(--tinta-2)}
+.plano .leva{margin-bottom:18px}
+.plano .leva li.nao{color:#9a8e78}
+.plano .leva li.nao .ic{background:#cbbf9f}
+.btn.leve{background:#efe4c6;color:var(--tinta);box-shadow:0 4px 0 #cdbf95}
+.btn.leve::after{display:none}
+.selos-conf{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 14px;margin-top:22px;font-size:.86rem;color:var(--tinta-2)}
+.selos-conf span{display:inline-flex;gap:6px;align-items:center}
+.selos-conf .ic{color:var(--folha)}
+.nao-e{list-style:none;max-width:32em;margin:0 auto;display:grid;gap:12px}
+.nao-e li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;line-height:1.45;color:var(--tinta-2)}
+.nao-e li::before{content:"✕";flex:0 0 26px;height:26px;border-radius:50%;background:#e6d6cc;color:var(--risco);display:grid;place-items:center;font-weight:800;font-size:.8rem;margin-top:1px}
+.selo-garantia{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,#f4c766,#d69222);display:grid;place-items:center;text-align:center;color:#3b220e;font-family:var(--serif);font-weight:700;line-height:1.05;box-shadow:0 0 0 5px var(--papel),0 0 0 7px var(--ouro);font-size:.9rem}
+.selo-garantia b{display:block;font-size:2.4rem}
+/* popup */
+.pop{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,12,5,.72)}
+.pop.on{display:flex;animation:surge .35s var(--ease)}
+.pop-caixa{position:relative;max-width:400px;width:100%;background:var(--papel);border-radius:22px;padding:30px 22px 22px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.pop-caixa h3{font-size:1.5rem;margin-bottom:8px}
+.pop-caixa p{color:var(--tinta-2);font-size:1rem;margin-bottom:16px}
+.pop-caixa .leva{margin-bottom:18px}
+.pop-x{position:absolute;top:10px;right:12px;background:none;border:0;font-size:1.6rem;color:var(--tinta-2);cursor:pointer;line-height:1}
+.foto-lembra{width:100%;border-radius:18px;margin:0 auto 26px;box-shadow:0 22px 40px -24px rgba(59,34,14,.6)}
+.pop-nao{display:block;margin:14px auto 0;background:none;border:0;color:var(--tinta-2);text-decoration:underline;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+<body>
+
+<!-- Ícones (traço no estilo Lucide) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-folha" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-broto" viewBox="0 0 24 24"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 24 24"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></symbol>
+  <symbol id="i-som" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
+  <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-letra" viewBox="0 0 24 24"><path d="M21 14h-5"/><path d="M16 16v-3.5a2.5 2.5 0 0 1 5 0V16"/><path d="M4.5 13h6"/><path d="m3 16 4.5-9 4.5 9"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-lua" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-impressora" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></symbol>
+  <symbol id="i-presente" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-xicara" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+  <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+  <symbol id="i-chama" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-livro" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+  <symbol id="i-celular" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+</svg>
+
+<!-- 1. STICKY: faixa de oferta + perfil -->
+<div class="faixa-topo">🛡️ 7 dias de garantia · 📲 Acesso na hora, no celular · 🎁 4 presentes no plano completo</div>
+<div class="perfil">
+  <img src="assets/avatar-antonio.jpg" alt="" width="38" height="38" onerror="this.remove()">
+  <div><b>A Botica dos Antigos</b><small>com o Seu Antônio</small></div>
+</div>
+
+<template id="capaCss"><div class="capa-css"><div class="v">🏺</div><small>A Botica</small><b>dos Antigos</b><span>31 tinturas e garrafadas</span></div></template>
+
+<!-- 2. HERO -->
+<header class="hero grao" id="topo">
+  <div class="wrap">
+    <span class="etiqueta">Do armário da vó</span>
+    <p class="aspas">“Minha avó tinha um armário só de vidrinhos. <em>Hoje eu te ensino a montar o seu.</em>”</p>
+    <p class="quem">— Seu Antônio</p>
+    <p class="sub">31 tinturas e garrafadas dos antigos: a erva de molho no álcool de beber por 15 dias, coada, em gotinhas que duram 1 ano. Com a medida certa e os cuidados de cada vidrinho.</p>
+    <div class="acao">
+      <a class="btn" href="#oferta">Quero montar a minha botica<small>a partir de R$ <span data-preco="basico">17,00</span>, acesso na hora</small></a>
+      <div class="seguro"><span><svg class="ic"><use href="#i-escudo"/></svg>7 dias de garantia</span><span><svg class="ic"><use href="#i-raio"/></svg>Acesso imediato</span></div>
+    </div>
+    <div class="capa-box">
+      <img class="mockup" src="assets/hero-mockup.jpg" alt="O livro A Botica dos Antigos impresso e no celular, com vidrinhos de tintura" width="1000" height="1000" fetchpriority="high" onerror="this.outerHTML=document.getElementById('capaCss').innerHTML">
+      <!-- MOCKUP: assets/hero-mockup.jpg (se faltar, aparece a capa desenhada) -->
+    </div>
+    <div class="fatos">
+      <div><b data-conta="31">31</b><span>preparos</span></div>
+      <div><b>15</b><span>dias de molho</span></div>
+      <div><b>1 ano</b><span>de validade</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- 3. DOR / LEMBRANÇAS -->
+<section class="grao">
+  <div class="wrap">
+    <div class="orn"><svg class="ic"><use href="#i-folha"/></svg></div>
+    <h2 class="rv">Você também lembra?</h2>
+    <p class="intro rv">Quem cresceu perto dos mais velhos guarda pelo menos uma destas lembranças:</p>
+    <img class="foto-lembra rv" src="assets/armario-vo.jpg" alt="O armário de vidrinhos da vó" loading="lazy" onerror="this.remove()">
+    <ul class="lembra rv">
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>O vidrinho amargo que aparecia depois do almoço de domingo, umas gotas num copo d'água e pronto.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>O álcool de arnica que a vó passava na pancada da criança.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>A fricção de álcool de alecrim nas pernas cansadas, no fim do dia.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>A garrafa com raiz e casca de molho na cachaça, guardada no canto da cozinha.</span></li>
+      <li><svg class="ic"><use href="#i-gota"/></svg><span>O papelzinho escrito a lápis colado em cada vidro, para ninguém confundir.</span></li>
+    </ul>
+    <div class="citacao rv">
+      <p>A verdade é que esse saber está sumindo. Quem sabia fazer não anotou a medida.</p>
+      <p>E o que sobrou virou <strong>garrafada de feira sem rótulo</strong>, sem dizer o que tem dentro, prometendo curar de tudo. Ou receita solta na internet, que manda usar álcool de farmácia — que <strong>não é de beber</strong>.</p>
+      <p>Foi por isso que nasceu <strong>A Botica dos Antigos</strong>: o costume da vó, com a medida certa e os cuidados escritos com todas as letras.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COMO FUNCIONA -->
+<section style="background:var(--papel)">
+  <div class="wrap">
+    <h2 class="rv">É mais simples do que parece</h2>
+    <p class="intro rv">Toda a botica segue a mesma regra de ouro. Aprendeu a primeira, sabe fazer todas.</p>
+    <div class="regra rv">
+      <div><b>1 : 5</b>1 parte de erva seca para 5 de álcool</div>
+      <div><b>15</b>dias no escuro, sacudindo todo dia</div>
+      <div><b>1 ano</b>de validade depois de coada</div>
+    </div>
+    <ol class="tres rv">
+      <li><b>1</b><div><strong>Põe a erva de molho</strong><span>No vidro, com álcool de cereais misturado com água (o livro ensina qual comprar e qual nunca usar).</span></div></li>
+      <li><b>2</b><div><strong>Espera 15 dias</strong><span>No armário escuro, sacudindo uma vez por dia. O livro avisa o dia de coar.</span></div></li>
+      <li><b>3</b><div><strong>Coa e guarda em gotinhas</strong><span>No vidrinho âmbar de conta-gotas, com o rótulo pronto para imprimir. Dura 1 ano.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5. POR DENTRO (telas reais do livro) -->
+<section class="dentro" style="background:var(--papel);padding-top:0">
+  <div class="wrap">
+    <h2 class="rv">Veja por dentro</h2>
+    <p class="intro rv">Não é um PDF qualquer: é um livro que funciona no celular, feito para quem não tem paciência com letra miúda.</p>
+    <div class="trilho rv" id="trilho">
+      <div class="tela"><div class="celular"><img src="assets/dentro-1.jpg" alt="Capa do livro no celular" loading="lazy"></div><p><b>Abre no celular</b>Sem baixar nada, direto do e-mail.</p></div>
+      <div class="tela"><div class="celular"><img src="assets/dentro-2.jpg" alt="Atalhos Quando bate" loading="lazy"></div><p><b>Ache pelo que sente</b>Toque em “não consigo dormir” e vá direto.</p></div>
+      <div class="tela"><div class="celular"><img src="assets/dentro-3.jpg" alt="Receita aberta com aviso de cuidado" loading="lazy"></div><p><b>Avisa o que é perigoso para você</b>Marque seus remédios e o livro destaca em amarelo.</p></div>
+      <div class="tela"><div class="celular"><img src="assets/dentro-4.jpg" alt="Meus vidrinhos com datas" loading="lazy"></div><p><b>Lembra o dia de coar</b>E o dia em que o vidrinho vence.</p></div>
+      <div class="tela"><div class="celular"><img src="assets/dentro-5.jpg" alt="Rótulos para imprimir" loading="lazy"></div><p><b>Rótulos prontos</b>Imprima, recorte e cole nos vidros.</p></div>
+    </div>
+    <div class="pontos" id="pontos" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- 6. O QUE VOCÊ RECEBE -->
+<section class="grao">
+  <div class="wrap">
+    <div class="orn"><svg class="ic"><use href="#i-livro"/></svg></div>
+    <h2 class="rv">O que tem na Botica</h2>
+    <p class="intro rv">31 preparos em 7 partes, cada um com o passo a passo, a medida, a dica do Seu Antônio, os cuidados e quando procurar o médico.</p>
+    <div class="sumario rv">
+      <h3>Sumário</h3>
+      <p>A Botica dos Antigos · Edição 1.0</p>
+      <ol>
+        <li><span class="n">1</span><span class="t">O jeito certo de fazer</span><span class="pt"></span><span class="q">5 lições</span></li>
+        <li><span class="n">2</span><span class="t">Os vidrinhos da digestão</span><span class="pt"></span><span class="q">6</span></li>
+        <li><span class="n">3</span><span class="t">Os vidrinhos da calma e do sono</span><span class="pt"></span><span class="q">5</span></li>
+        <li><span class="n">4</span><span class="t">Garganta, tosse e peito</span><span class="pt"></span><span class="q">4</span></li>
+        <li><span class="n">5</span><span class="t">Os de passar: fricção e pancada</span><span class="pt"></span><span class="q">5</span></li>
+        <li><span class="n">6</span><span class="t">As raízes e cascas da despensa</span><span class="pt"></span><span class="q">3</span></li>
+        <li><span class="n">7</span><span class="t">As garrafadas, do jeito seguro</span><span class="pt"></span><span class="q">3</span></li>
+      </ol>
+    </div>
+    <p class="intro rv" style="margin-bottom:0">Gengibre, boldo, espinheira-santa, erva-doce, hortelã, carqueja, camomila, melissa, maracujá, capim-santo, mulungu, guaco, própolis, tomilho, romã, arnica, alecrim, erva-baleeira, calêndula, cravo, cúrcuma, canela e casca de laranja.</p>
+    <a class="btn rv" href="#oferta" style="margin-top:30px">Quero os 31 vidrinhos<small>acesso na hora, no celular</small></a>
+  </div>
+</section>
+
+<!-- 7. DIFERENCIAL: OS CUIDADOS -->
+<section style="background:var(--papel)">
+  <div class="wrap">
+    <h2 class="rv">Os cuidados que ninguém te conta</h2>
+    <p class="intro rv">Vidrinho de erva é coisa séria. Por isso cada um vem com o que a vó sabia de cabeça — e nunca escreveu.</p>
+    <div class="cuid">
+      <div class="rv"><i>🥃</i><span><b>O álcool certo</b><p>Só álcool de beber: de cereais, cachaça ou vodka. O livro mostra por que álcool de farmácia, de limpeza ou em gel nunca serve.</p></span></div>
+      <div class="rv"><i>🚫</i><span><b>Quem não pode</b><p>Grávida, criança, quem toma anticoagulante, remédio de pressão ou de dormir: cada vidrinho diz para quem pede atenção.</p></span></div>
+      <div class="rv"><i>👨‍👩‍👧</i><span><b>Versão sem álcool</b><p>Para quem não pode beber: glicerito, oximel, mel de ervas e cubinhos de chá. Toda tintura tem a sua troca.</p></span></div>
+      <div class="rv"><i>🏷️</i><span><b>“Não beber” bem escrito</b><p>Os vidrinhos de passar (arnica, alecrim, calêndula) vêm marcados para ninguém confundir.</p></span></div>
+    </div>
+    <p class="intro rv" style="margin:26px auto 0;font-size:.95rem">Tudo aqui é tradição popular: anda junto com o que o médico receitou, nunca no lugar.</p>
+  </div>
+</section>
+
+<!-- 8. BÔNUS -->
+<section class="escuro grao">
+  <div class="wrap">
+    <div class="orn"><svg class="ic"><use href="#i-presente"/></svg></div>
+    <h2 class="rv">E no plano completo, 4 presentes</h2>
+    <p class="intro rv">Dentro do mesmo livro, sem precisar baixar mais nada.</p>
+    <div class="bonus rv"><img src="assets/presente-1.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>👨‍👩‍👧</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 1</span><h3>A Farmacinha Sem Álcool</h3><p>Glicerito, oximel, mel de ervas e cubinhos de chá congelado, mais a tabela de quem pode usar o quê na casa.</p><p class="valor"><s>R$ 37</s><b>grátis no completo</b></p></div></div>
+    <div class="bonus rv"><img src="assets/presente-2.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>🪴</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 2</span><h3>Do Quintal pro Vidrinho</h3><p>As 10 ervas mais fáceis de plantar em vaso ou canteiro: como plantar, quando colher e como secar para o ano todo.</p><p class="valor"><s>R$ 37</s><b>grátis no completo</b></p></div></div>
+    <div class="bonus rv"><img src="assets/presente-3.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>🎁</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 3</span><h3>Vidrinhos de Presente</h3><p>Sal de ervas, açúcar de canela, vinagre temperado, escalda-pés e sachê: presentes feitos à mão para o Natal.</p><p class="valor"><s>R$ 29</s><b>grátis no completo</b></p></div></div>
+    <div class="bonus rv"><img src="assets/presente-4.jpg" alt="" loading="lazy" onerror="this.outerHTML='<div class=capinha>♻️</div>'"><div><span class="selo"><svg class="ic"><use href="#i-presente"/></svg>PRESENTE 4</span><h3>Não Jogue Fora</h3><p>Casca de laranja, gengibre murcho, talo de erva, maço que sobrou: o que ia para o lixo vira vidrinho e tempero.</p><p class="valor"><s>R$ 27</s><b>grátis no completo</b></p></div></div>
+    <p class="intro rv" style="margin:26px auto 0">Tudo isso vem <b style="color:var(--mel)">de presente</b> no plano completo.</p>
+  </div>
+</section>
+
+<!-- 9. DEPOIMENTOS (aparece sozinho quando você preencher DEPOIMENTOS lá embaixo) -->
+<section class="depos" id="depoimentos" hidden>
+  <div class="wrap"><h2>Quem já montou a sua botica</h2></div>
+  <div class="depos-janela"><div class="depos-trilho" id="deposTrilho"></div></div>
+</section>
+
+<!-- 10. OFERTA: 2 planos -->
+<section class="grao" id="oferta">
+  <div class="wrap">
+    <div class="orn"><svg class="ic"><use href="#i-gota"/></svg></div>
+    <h2>Escolha a sua botica</h2>
+    <p class="intro">Pagamento único. Acesso na hora, no e-mail, para usar no celular e imprimir.</p>
+    <div class="planos">
+      <div class="plano top">
+        <span class="tag-top">Recomendado</span>
+        <img class="capa-oferta" src="assets/capa-botica.jpg" alt="Capa de A Botica dos Antigos" width="900" height="1200" loading="lazy" onerror="this.remove()">
+        <h3>Botica Completa</h3>
+        <p class="linha">o livro + os 4 presentes</p>
+        <ul class="leva">
+          <li><svg class="ic"><use href="#i-check"/></svg>A Botica dos Antigos: 31 preparos em 7 partes</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Meus vidrinhos, perfil de cuidado e 36 rótulos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Presente 1: A Farmacinha Sem Álcool</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Presente 2: Do Quintal pro Vidrinho</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Presente 3: Vidrinhos de Presente</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Presente 4: Não Jogue Fora</li>
+        </ul>
+        <p class="de">Tudo isso de <s>R$ <span data-preco="antigo">197,00</span></s> por</p>
+        <p class="preco"><sup>R$</sup><span data-preco="completo">27,00</span></p>
+        <p class="unico">pagamento único · <b>acesso para sempre</b></p>
+        <a class="btn" href="#checkout-premium" data-checkout="completo">Quero a Botica Completa<small>com os 4 presentes</small></a>
+      </div>
+      <div class="plano basico">
+        <h3>Só o livro</h3>
+        <p class="linha">os 31 preparos, sem os presentes</p>
+        <ul class="leva">
+          <li><svg class="ic"><use href="#i-check"/></svg>A Botica dos Antigos: 31 preparos em 7 partes</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Meus vidrinhos, perfil de cuidado e 36 rótulos</li>
+          <li class="nao"><svg class="ic"><use href="#i-check"/></svg>Sem os 4 presentes (nem a versão sem álcool)</li>
+        </ul>
+        <p class="preco"><sup>R$</sup><span data-preco="basico">17,00</span></p>
+        <p class="unico">pagamento único</p>
+        <a class="btn leve" href="#checkout-basico" data-checkout="basico" data-downsell>Quero só o livro</a>
+      </div>
+    </div>
+    <div class="selos-conf"><span><svg class="ic"><use href="#i-escudo"/></svg>Garantia de 7 dias</span><span><svg class="ic"><use href="#i-cadeado"/></svg>Compra segura</span><span><svg class="ic"><use href="#i-celular"/></svg>Acesso vitalício</span></div>
+  </div>
+</section>
+
+<!-- 11. GARANTIA -->
+<section style="background:var(--papel);padding:56px 0">
+  <div class="wrap garantia">
+    <div class="selo-garantia rv"><span><b>7</b>dias de<br>garantia</span></div>
+    <div class="rv">
+      <h2>Risco zero para você</h2>
+      <p>Abra, leia, faça o seu primeiro vidrinho. Se em 7 dias achar que não valeu, é só pedir o reembolso e devolvemos cada centavo, sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12. PARA QUEM É / NÃO É -->
+<section class="grao">
+  <div class="wrap">
+    <h2 class="rv">Para quem é</h2>
+    <ul class="para-quem rv" style="margin-top:22px">
+      <li><svg class="ic"><use href="#i-check"/></svg><span>Para quem lembra do armário de vidrinhos da vó e quer o seu.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span>Para quem gosta de cuidar da casa com o que vem do quintal e da feira.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span>Para quem quer fazer do jeito certo, sabendo quem pode e quem não pode tomar.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span>Para quem quer dar um presente feito à mão neste Natal.</span></li>
+    </ul>
+    <h2 class="rv" style="margin-top:40px">Para quem não é</h2>
+    <ul class="nao-e rv" style="margin-top:22px">
+      <li>Para quem quer trocar o remédio do médico por gotinha. Aqui é costume, não tratamento.</li>
+      <li>Para quem procura promessa de cura. Isso a Botica não faz, e desconfie de quem faz.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section style="background:var(--papel)">
+  <div class="wrap faq">
+    <h2 class="rv" style="margin-bottom:26px">Perguntas que o pessoal faz</h2>
+    <details><summary>Como eu recebo?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Assim que o pagamento é aprovado, o acesso chega no seu e-mail. Abre direto no celular, sem baixar aplicativo. Dá para salvar em PDF e imprimir também.</p></div></details>
+    <details><summary>Precisa de álcool? Qual eu compro?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>As tinturas usam álcool de beber: álcool de cereais (vende em casa de produtos naturais e cerealista), cachaça ou vodka. O livro explica a mistura e mostra por que álcool de farmácia ou de limpeza nunca serve.</p></div></details>
+    <details><summary>E quem não pode tomar álcool?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>O primeiro presente, A Farmacinha Sem Álcool, ensina a versão de cada vidrinho sem álcool: na glicerina, no vinagre com mel, no mel ou em cubinhos de chá congelado. Vem no plano completo.</p></div></details>
+    <details><summary>Onde eu acho as ervas?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Quase todas estão secas em casa de produtos naturais, feira e mercado (camomila, boldo, erva-doce, canela, cravo, gengibre). Várias dá para plantar em vaso, e o segundo presente ensina como.</p></div></details>
+    <details><summary>Tomo remédio. Posso usar?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Cada vidrinho diz para quem pede atenção, e o livro tem o “perfil de cuidado”: você marca os seus remédios e ele destaca o que não combina. Mesmo assim, mostre ao seu médico antes, principalmente se usa anticoagulante, remédio de pressão, de diabetes ou de dormir.</p></div></details>
+    <details><summary>Serve para criança ou grávida?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Tintura com álcool, não. Para criança e grávida, só com orientação do médico, e o livro deixa isso claro em cada preparo.</p></div></details>
+    <details><summary>E se eu não gostar?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Você tem 7 dias de garantia. Pediu o reembolso dentro desse prazo, devolvemos tudo, sem perguntas.</p></div></details>
+    <details><summary>O acesso é para sempre?<svg class="ic"><use href="#i-seta"/></svg></summary><div class="resp"><p>Sim. Pagamento único, sem mensalidade. O livro fica com você.</p></div></details>
+  </div>
+</section>
+
+<!-- 14. CTA FINAL -->
+<section class="escuro grao final">
+  <div class="wrap">
+    <h2>O armário da vó não precisa sumir junto com ela</h2>
+    <p class="intro">O primeiro vidrinho leva 10 minutos para preparar. Daqui a 15 dias, ele está pronto no seu armário, e dura um ano inteiro.</p>
+    <div class="acao">
+      <a class="btn" href="#checkout-premium" data-checkout="completo">Quero a Botica Completa<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <div class="seguro"><span><svg class="ic"><use href="#i-escudo"/></svg>7 dias de garantia</span><span><svg class="ic"><use href="#i-raio"/></svg>Acesso imediato</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. RODAPÉ -->
+<footer>
+  <div class="wrap">
+    <p>A Botica dos Antigos · Conteúdo de tradição popular, com fins informativos. Não é remédio de médico e não substitui a orientação do seu doutor. As tinturas e garrafadas contêm álcool.</p>
+    <p>Pagamento processado com segurança pela plataforma de checkout. © A Botica dos Antigos. Todos os direitos reservados.</p>
+    <p id="suporte" hidden>Dúvidas antes de comprar? Escreva para <a href="#"></a></p>
+  </div>
+</footer>
+
+<!-- 16. POPUP DOWNSELL: aparece quando a pessoa escolhe "só o livro" -->
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTit">
+  <div class="pop-caixa">
+    <button class="pop-x" id="popX" aria-label="Fechar">×</button>
+    <h3 id="popTit">Espera! Por só R$ <span id="popDif">10</span> a mais…</h3>
+    <p>…você leva os 4 presentes junto com a Botica:</p>
+    <ul class="leva">
+      <li><svg class="ic"><use href="#i-check"/></svg>A Farmacinha Sem Álcool</li>
+      <li><svg class="ic"><use href="#i-check"/></svg>Do Quintal pro Vidrinho</li>
+      <li><svg class="ic"><use href="#i-check"/></svg>Vidrinhos de Presente (Natal)</li>
+      <li><svg class="ic"><use href="#i-check"/></svg>Não Jogue Fora</li>
+    </ul>
+    <a class="btn" href="#checkout-premium" data-checkout="completo">Sim, quero a Botica Completa<small>R$ <span data-preco="completo">27,00</span></small></a>
+    <a class="pop-nao" href="#checkout-basico" data-checkout="basico" id="popNao">Não, quero só o livro por R$ <span data-preco="basico">17,00</span></a>
+  </div>
+</div>
+
+<script>
+/* ===== CONFIGURAÇÃO: troque aqui preços, links do checkout e e-mail de suporte ===== */
+const CONFIG = {
+  precos: { completo: "27,00", basico: "17,00", antigo: "197,00" },
+  checkout: {
+    completo: "#checkout-premium",  // ← cole aqui o link do checkout do plano completo (Wiapy/PerfectPay)
+    basico:   "#checkout-basico"    // ← cole aqui o link do checkout do plano só o livro
+  },
+  suporte: "",  // ex.: "contato@seudominio.com.br" — vazio esconde a linha de suporte no rodapé
+};
+
+/* ==========================================================================
+   DEPOIMENTOS — PREENCHA AQUI SÓ COM DEPOIMENTOS REAIS DE QUEM COMPROU
+   Escreva sempre entre aspas "". Espaço com nome ou texto vazio não aparece.
+   Se todos ficarem vazios, a seção inteira fica escondida.
+   - foto → nome do arquivo na pasta assets/depoimentos/ (ou "" para a inicial)
+   ========================================================================== */
+const DEPOIMENTOS = [
+  { nome: "", idade: "", cidade: "", foto: "", texto: "" },
+  { nome: "", idade: "", cidade: "", foto: "", texto: "" },
+  { nome: "", idade: "", cidade: "", foto: "", texto: "" },
+];
+/* ===================== FIM DOS DEPOIMENTOS ===================== */
+CONFIG.depoimentos = DEPOIMENTOS
+  .filter(d => String(d.nome || '').trim() && String(d.texto || '').trim())
+  .map(d => ({ ...d, foto: d.foto && !d.foto.includes('/') ? 'assets/depoimentos/' + d.foto : d.foto }));
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const num = v => parseFloat(String(v).replace('.', '').replace(',', '.'));
+
+// Preços e diferença do popup
+$$('[data-preco]').forEach(el => { const v = CONFIG.precos[el.dataset.preco]; if (v) el.textContent = v; });
+$('#popDif').textContent = String(Math.round(num(CONFIG.precos.completo) - num(CONFIG.precos.basico)));
+
+// Links do checkout com UTMs repassadas da URL
+const utm = location.search.replace(/^\?/, '');
+const comUtm = u => u + (utm && !u.startsWith('#') ? (u.includes('?') ? '&' : '?') + utm : '');
+$$('[data-checkout]').forEach(a => { a.href = comUtm(CONFIG.checkout[a.dataset.checkout]); });
+
+// Pixel
+const track = (ev, data) => { if (window.fbq) fbq('track', ev, data); };
+$$('[data-checkout]').forEach(a => a.addEventListener('click', e => {
+  if (a.hasAttribute('data-downsell')) return;  // o "só o livro" abre o popup antes
+  track('InitiateCheckout', { value: num(CONFIG.precos[a.dataset.checkout]), currency: 'BRL', content_name: a.dataset.checkout });
+}));
+
+// Popup de downsell: primeiro clique em "só o livro" oferece o completo
+const pop = $('#pop');
+const fecharPop = () => pop.classList.remove('on');
+$$('[data-downsell]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); pop.classList.add('on'); }));
+$('#popX').addEventListener('click', fecharPop);
+pop.addEventListener('click', e => { if (e.target === pop) fecharPop(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') fecharPop(); });
+
+// Depoimentos (faixa que corre sozinha)
+if (CONFIG.depoimentos.length) {
+  const card = d => {
+    const el = document.createElement('div'); el.className = 'depo';
+    el.innerHTML = '<div class="depo-top"><span class="depo-av"></span><div><b></b><small></small><i>★★★★★</i></div></div><p></p>';
+    const av = el.querySelector('.depo-av');
+    if (d.foto) { const img = new Image(); img.src = d.foto; img.alt = ''; img.onload = () => img.classList.add('ok'); img.onerror = () => { av.textContent = d.nome.trim()[0]; }; av.appendChild(img); }
+    else av.textContent = d.nome.trim()[0];
+    el.querySelector('b').textContent = d.nome;
+    const info = [String(d.idade || '').trim() ? String(d.idade).trim().replace(/\s*anos$/i, '') + ' anos' : '', String(d.cidade || '').trim()].filter(Boolean).join(' · ');
+    const sm = el.querySelector('small'); if (info) sm.textContent = info; else sm.remove();
+    el.querySelector('p').textContent = d.texto;
+    return el;
+  };
+  const trilho = $('#deposTrilho'), janela = trilho.parentElement;
+  $('#depoimentos').hidden = false;
+  let anim;
+  const montar = () => {
+    if (anim) anim.cancel(); trilho.textContent = '';
+    CONFIG.depoimentos.forEach(d => trilho.appendChild(card(d)));
+    const volta = trilho.scrollWidth; if (!volta) return;
+    const copias = Math.ceil(janela.clientWidth / volta) + 1;
+    for (let i = 0; i < copias; i++) CONFIG.depoimentos.forEach(d => trilho.appendChild(card(d)));
+    if (calmo || !trilho.animate) return;
+    anim = trilho.animate([{ transform: 'translate3d(0,0,0)' }, { transform: `translate3d(${-volta}px,0,0)` }], { duration: volta / 20 * 1000, iterations: Infinity, easing: 'linear' });
+  };
+  montar();
+  let larg = innerWidth; addEventListener('resize', () => { if (innerWidth !== larg) { larg = innerWidth; montar(); } });
+}
+
+// Suporte no rodapé
+if (CONFIG.suporte) { const sup = $('#suporte'), a = sup.querySelector('a'); a.href = 'mailto:' + CONFIG.suporte; a.textContent = CONFIG.suporte; sup.hidden = false; }
+
+// Carrossel "por dentro"
+(function () {
+  const trilho = $('#trilho'), pontos = $('#pontos'), telas = [...trilho.children];
+  telas.forEach(t => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ver tela'); b.addEventListener('click', () => t.scrollIntoView({ behavior: calmo ? 'auto' : 'smooth', inline: 'center', block: 'nearest' })); pontos.appendChild(b); });
+  const marcar = () => {
+    const meio = trilho.scrollLeft + trilho.clientWidth / 2; let perto = 0, menor = Infinity;
+    telas.forEach((t, i) => { const d = Math.abs(t.offsetLeft + t.offsetWidth / 2 - meio); if (d < menor) { menor = d; perto = i; } });
+    [...pontos.children].forEach((b, i) => b.classList.toggle('on', i === perto));
+  };
+  trilho.addEventListener('scroll', () => requestAnimationFrame(marcar), { passive: true }); marcar();
+})();
+
+// FAQ com altura animada
+$$('.faq details').forEach(d => {
+  const s = d.querySelector('summary'), r = d.querySelector('.resp');
+  s.addEventListener('click', e => {
+    if (calmo || !r.animate) return; e.preventDefault();
+    if (d.open) r.animate([{ height: r.offsetHeight + 'px' }, { height: '0px' }], { duration: 260, easing: 'ease-out' }).onfinish = () => d.open = false;
+    else { d.open = true; r.animate([{ height: '0px' }, { height: r.offsetHeight + 'px' }], { duration: 300, easing: 'ease-out' }); }
+  });
+});
+
+// Números que contam ao aparecer
+function contar(el) {
+  const fim = +el.dataset.conta; if (calmo) return;
+  const t0 = performance.now(), dur = 900;
+  const passo = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(fim * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(passo); };
+  el.textContent = '0'; requestAnimationFrame(passo);
+}
+
+// Entrada das seções + ViewContent na oferta
+const oferta = $('#oferta'); let vcFeito = false;
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(ents => ents.forEach(en => {
+    if (en.target === oferta) { if (en.isIntersecting && !vcFeito) { vcFeito = true; track('ViewContent', { content_name: 'Oferta Botica' }); } return; }
+    if (en.isIntersecting) { en.target.classList.add('vis'); en.target.querySelectorAll('[data-conta]').forEach(contar); io.unobserve(en.target); }
+  }), { threshold: .12 });
+  $$('.rv').forEach(el => io.observe(el)); io.observe(oferta);
+  $$('.hero [data-conta]').forEach(contar);
+} else $$('.rv').forEach(el => el.classList.add('vis'));
+</script>
+</body>
+</html>
