@@ -352,16 +352,6 @@ footer a{color:#d4c79f}
 .nao-e li::before{content:"✕";flex:0 0 26px;height:26px;border-radius:50%;background:#e6d6cc;color:var(--risco);display:grid;place-items:center;font-weight:800;font-size:.8rem;margin-top:1px}
 .selo-garantia{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,#f4c766,#d69222);display:grid;place-items:center;text-align:center;color:#3b220e;font-family:var(--serif);font-weight:700;line-height:1.05;box-shadow:0 0 0 5px var(--papel),0 0 0 7px var(--ouro);font-size:.9rem}
 .selo-garantia b{display:block;font-size:2.4rem}
-/* popup */
-.pop{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(20,12,5,.72)}
-.pop.on{display:flex;animation:surge .35s var(--ease)}
-.pop-caixa{position:relative;max-width:400px;width:100%;background:var(--papel);border-radius:22px;padding:30px 22px 22px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.5)}
-.pop-caixa h3{font-size:1.5rem;margin-bottom:8px}
-.pop-caixa p{color:var(--tinta-2);font-size:1rem;margin-bottom:16px}
-.pop-caixa .leva{margin-bottom:18px}
-.pop-x{position:absolute;top:10px;right:12px;background:none;border:0;font-size:1.6rem;color:var(--tinta-2);cursor:pointer;line-height:1}
-.foto-lembra{width:100%;border-radius:18px;margin:0 auto 26px;box-shadow:0 22px 40px -24px rgba(59,34,14,.6)}
-.pop-nao{display:block;margin:14px auto 0;background:none;border:0;color:var(--tinta-2);text-decoration:underline;font-size:.9rem;cursor:pointer}
 
 /* ===== REMODELAGEM v2: estrutura de página escalada (faixa com preço, CTA cedo, razões, linha do tempo, comparativo, empilhamento) ===== */
 .faixa-topo{display:flex;flex-direction:column;gap:2px;font-size:.74rem;letter-spacing:.03em;padding:7px 10px}
@@ -469,10 +459,17 @@ footer a{color:#d4c79f}
 .stack-total s{color:var(--risco);font-size:1.15rem;text-decoration-thickness:2px}
 .stack-hoje{font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--folha)}
 .stack .preco{font-size:3.6rem}
-.so-livro{text-align:center;font-size:.92rem;color:var(--tinta-2);margin-top:22px}
-.so-livro a{color:var(--tinta);font-weight:700}
 
-.garantia .forte{margin-top:8px;font-weight:700;color:var(--mata)}
+.garantia-caixa{position:relative;max-width:520px;margin:0 auto;text-align:center;background:#fff;border:1.5px solid var(--perg-2);border-radius:22px;padding:28px 20px 26px;box-shadow:0 14px 34px -18px rgba(23,58,34,.35)}
+.garantia-caixa::before{content:"";position:absolute;inset:7px;border:1px dashed var(--ouro);border-radius:16px;pointer-events:none;opacity:.6}
+.selo-svg{display:block;width:150px;height:150px;margin:-4px auto 14px;filter:drop-shadow(0 10px 14px rgba(59,34,14,.3))}
+.garantia-caixa h2{font-size:1.6rem;margin-bottom:10px}
+.garantia-caixa>p{color:var(--tinta-2);font-size:1rem;max-width:30em;margin:0 auto}
+.garantia-pontos{list-style:none;display:grid;gap:10px;max-width:22em;margin:18px auto 4px;text-align:left}
+.garantia-pontos li{display:flex;gap:10px;align-items:flex-start;font-size:.96rem;line-height:1.4;color:var(--tinta-2)}
+.garantia-pontos .ic{flex:none;width:20px;height:20px;color:var(--folha);margin-top:1px}
+.garantia-pontos b{color:var(--tinta)}
+.garantia-caixa .forte{margin-top:8px;font-weight:700;color:var(--mata)}
 
 .carta{text-align:left}
 .carta img{width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 auto 16px;box-shadow:0 0 0 3px var(--papel),0 0 0 5px var(--ouro)}
@@ -530,6 +527,15 @@ footer a{color:#d4c79f}
 @media (min-width:700px){.foto-antonio{max-width:360px}.carta-papel{padding:60px 40px 32px}}
 .hero .capa-box{margin:20px auto 22px}
 .hero .acao+.sub{margin-top:28px}
+/* topo v3: etiqueta menor e no alto, frase maior, subtítulo antes da foto */
+.hero{padding-top:16px}
+.hero .etiqueta{font-size:.66rem;letter-spacing:.12em;padding:4px 11px;margin-bottom:12px}
+.hero .aspas{font-size:clamp(2.05rem,8.6vw,3rem);line-height:1.1;margin:0 auto 10px}
+.hero .quem{margin-bottom:14px}
+.hero .sub-topo{font-size:1.04rem;line-height:1.5;margin:0 auto 10px}
+.sub-destaque{display:inline-block;font-weight:700;color:var(--mel);font-size:1rem;margin:0 auto 4px}
+.hero .sub-destaque+.capa-box{margin-top:16px}
+.hero .acao+.cards-prova{margin-top:26px}
 </style>
 <script>
 /* Foto da etapa ainda não colocada em assets/etapas/: some no site no ar; aparece como espaço tracejado só quando a página é aberta no seu computador. */
@@ -577,22 +583,22 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
     <span class="etiqueta">Do caderno do Seu Antônio</span>
     <p class="aspas">“Minha avó tinha um armário só de vidrinhos. <em>Hoje eu te ensino a montar o seu.</em>”</p>
     <p class="quem">— Seu Antônio</p>
+    <p class="sub sub-topo">Descubra o passo a passo para transformar plantas comuns — muitas que você já tem no quintal — em <b>gotinhas concentradas (tinturas) que duram 1 ano</b> no armário. Uns 10 minutos de preparo por vidrinho, com a medida certa de cada um.</p>
+    <p class="sub-destaque">Mais prático do que ferver chá todo dia.</p>
     <div class="capa-box">
       <img class="mockup" src="assets/hero-mockup.jpg" alt="O livro A Botica dos Antigos impresso e no celular, com vidrinhos de tintura" width="1000" height="1000" fetchpriority="high" onerror="this.outerHTML=document.getElementById('capaCss').innerHTML">
     </div>
     <div class="acao">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica por <span class="nw">R$ <span data-preco="completo">27,00</span></span><small>acesso na hora, no e-mail</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica por <span class="nw">R$ <span data-preco="completo">37,00</span></span><small>acesso na hora, no e-mail</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
-    <p class="sub">Descubra o passo a passo para transformar ervas comuns — muitas que você já tem no quintal ou acha na feira — em <b>vidrinhos de gotas que duram 1 ano</b> no armário. Ficam de molho em 10 minutos de preparo, com a medida certa e os cuidados de cada um.</p>
-    <p class="leve-it">O chá da vó continua valendo. O vidrinho é a mesma erva, pronta o ano inteiro.</p>
     <div class="cards-prova">
       <div><i>📖</i><span><b>31 tinturas e garrafadas</b> com a medida certa de cada uma</span></div>
       <div><i>⚠️</i><span><b>Os cuidados de cada vidrinho:</b> quem pode e quem não pode tomar</span></div>
       <div><i>🍯</i><span><b>Versão sem álcool</b> de cada vidrinho, para quem não pode beber</span></div>
     </div>
     <div class="acao">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero minha botica em casa<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero minha botica em casa<small>R$ <span data-preco="completo">37,00</span> com os 4 presentes</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
@@ -652,7 +658,7 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
     </article>
 
     <div class="acao rv">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero aprender a fazer meus vidrinhos<small>R$ <span data-preco="completo">27,00</span>, acesso na hora</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero aprender a fazer meus vidrinhos<small>R$ <span data-preco="completo">37,00</span>, acesso na hora</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
@@ -678,7 +684,7 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
     </div>
     <div class="aviso-usos rv"><svg class="ic"><use href="#i-escudo"/></svg><p>São usos da tradição popular, para o conforto do dia a dia. <b>Não tratam doença e não substituem o remédio do médico.</b> Dor forte, febre, ou incômodo que não passa ou que sempre volta: procure o médico. E cada vidrinho do livro diz quem não pode usar.</p></div>
     <div class="acao rv" style="margin-top:30px">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero os vidrinhos da vó<small>R$ <span data-preco="completo">27,00</span>, acesso na hora</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero os vidrinhos da vó<small>R$ <span data-preco="completo">37,00</span>, acesso na hora</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
@@ -700,7 +706,7 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
       <li class="rv"><small>🏡 Em 1 a 2 meses</small><h3>A botica montada, e a família percebe.</h3><p>Almoço pesado? Tem o vidrinho amargo. Perna cansada no fim do dia? Tem a fricção de alecrim. Você vira a pessoa da família que sabe o que fazer, como a vó era. E cada vidrinho dura 1 ano.</p><figure class="etapa-foto"><img src="assets/etapas/etapa-3.jpg" width="1000" height="750" alt="A botica montada, e a família percebe." loading="lazy" onerror="fotoEtapaFalta(this,3)"></figure></li>
     </ol>
     <div class="acao rv">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Começar minha botica hoje<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Começar minha botica hoje<small>R$ <span data-preco="completo">37,00</span> com os 4 presentes</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
@@ -748,7 +754,7 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
       <li class="v">Ou recuperar o costume do jeito certo: com a medida escrita e os cuidados de cada vidrinho.</li>
     </ul>
     <div class="acao rv">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero recuperar esse costume<small>R$ <span data-preco="completo">27,00</span>, acesso na hora</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero recuperar esse costume<small>R$ <span data-preco="completo">37,00</span>, acesso na hora</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
@@ -801,7 +807,7 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
     <p class="intro rv" style="margin:22px auto 30px;font-size:.95rem">Tudo aqui é tradição popular: anda junto com o que o médico receitou, nunca no lugar.</p>
 
     <div class="acao rv">
-      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero aprender tudo isso<small>R$ <span data-preco="completo">27,00</span> com os 4 presentes</small></a>
+      <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero aprender tudo isso<small>R$ <span data-preco="completo">37,00</span> com os 4 presentes</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
     </div>
   </div>
@@ -834,23 +840,41 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
       </ul>
       <p class="stack-total"><span>Total</span><s>R$ <span data-preco="antigo">197,00</span></s></p>
       <p class="stack-hoje">Hoje você leva tudo por apenas</p>
-      <p class="preco"><sup>R$</sup><span data-preco="completo">27,00</span></p>
+      <p class="preco"><sup>R$</sup><span data-preco="completo">37,00</span></p>
       <p class="unico">pagamento único · <b>acesso imediato no e-mail</b></p>
       <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Quero a Botica completa agora<small>com os 4 presentes</small></a>
       <p class="garantia-linha"><svg class="ic"><use href="#i-check"/></svg>Garantia incondicional de 7 dias</p>
       <div class="selos-conf"><span><svg class="ic"><use href="#i-cadeado"/></svg>Compra 100% segura</span><span><svg class="ic"><use href="#i-escudo"/></svg>Garantia de 7 dias</span><span><svg class="ic"><use href="#i-celular"/></svg>Acesso vitalício</span></div>
     </div>
-    <p class="so-livro">Prefere só o livro, sem os presentes? <a href="https://go.perfectpay.com.br/PPU38CQHULD" data-checkout="basico" data-downsell>Levar só o livro por R$ <span data-preco="basico">17,00</span></a></p>
   </div>
 </section>
 
 <!-- 13. GARANTIA -->
 <section style="background:var(--papel);padding:56px 0">
-  <div class="wrap garantia">
-    <div class="selo-garantia rv"><span><b>7</b>dias de<br>garantia</span></div>
-    <div class="rv">
+  <div class="wrap">
+    <div class="garantia-caixa rv">
+      <svg class="selo-svg" viewBox="0 0 200 200" role="img" aria-label="Selo: 7 dias de garantia incondicional">
+        <defs>
+          <linearGradient id="sg-ouro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8d97e"/><stop offset=".5" stop-color="#e9a93b"/><stop offset="1" stop-color="#b8792a"/></linearGradient>
+          <path id="sg-cima" d="M38 100a62 62 0 0 1 124 0"/>
+          <path id="sg-baixo" d="M31 100a69 69 0 0 0 138 0"/>
+        </defs>
+        <path fill="url(#sg-ouro)" d="M196.0 100.0L187.7 107.7L194.5 116.7L185.0 122.8L190.2 132.8L179.8 137.2L183.1 148.0L172.1 150.5L173.5 161.7L162.2 162.2L161.7 173.5L150.5 172.1L148.0 183.1L137.2 179.8L132.8 190.2L122.8 185.0L116.7 194.5L107.7 187.7L100.0 196.0L92.3 187.7L83.3 194.5L77.2 185.0L67.2 190.2L62.8 179.8L52.0 183.1L49.5 172.1L38.3 173.5L37.8 162.2L26.5 161.7L27.9 150.5L16.9 148.0L20.2 137.2L9.8 132.8L15.0 122.8L5.5 116.7L12.3 107.7L4.0 100.0L12.3 92.3L5.5 83.3L15.0 77.2L9.8 67.2L20.2 62.8L16.9 52.0L27.9 49.5L26.5 38.3L37.8 37.8L38.3 26.5L49.5 27.9L52.0 16.9L62.8 20.2L67.2 9.8L77.2 15.0L83.3 5.5L92.3 12.3L100.0 4.0L107.7 12.3L116.7 5.5L122.8 15.0L132.8 9.8L137.2 20.2L148.0 16.9L150.5 27.9L161.7 26.5L162.2 37.8L173.5 38.3L172.1 49.5L183.1 52.0L179.8 62.8L190.2 67.2L185.0 77.2L194.5 83.3L187.7 92.3Z"/>
+        <circle cx="100" cy="100" r="80" fill="#2f5a34"/>
+        <circle cx="100" cy="100" r="74" fill="none" stroke="#e9a93b" stroke-width="1.6"/>
+        <circle cx="100" cy="100" r="47" fill="none" stroke="#e9a93b" stroke-width="1" stroke-dasharray="2 3" opacity=".8"/>
+        <text font-family="Segoe UI,Arial,sans-serif" font-size="10.2" font-weight="800" letter-spacing="1.3" fill="#f8e6b4"><textPath href="#sg-cima" startOffset="50%" text-anchor="middle">GARANTIA INCONDICIONAL</textPath></text>
+        <text font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#f8e6b4"><textPath href="#sg-baixo" startOffset="50%" text-anchor="middle">★ DINHEIRO DE VOLTA ★</textPath></text>
+        <text x="100" y="114" text-anchor="middle" font-family="Palatino Linotype,Georgia,serif" font-size="58" font-weight="700" fill="#fbf2da">7</text>
+        <text x="100" y="135" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#e9a93b">DIAS</text>
+      </svg>
       <h2>Experimente por 7 dias sem preocupação</h2>
-      <p>Abra o livro, escolha o seu primeiro vidrinho, ponha de molho. Se em até 7 dias você achar que não é para você, por qualquer motivo, é só pedir o reembolso e devolvemos todo o seu dinheiro. Sem perguntas e sem burocracia.</p>
+      <p>Abra o livro, escolha o seu primeiro vidrinho, ponha de molho. Se em até 7 dias você achar que não é para você, por qualquer motivo, é só pedir o reembolso e devolvemos todo o seu dinheiro.</p>
+      <ul class="garantia-pontos">
+        <li><svg class="ic"><use href="#i-check"/></svg><span><b>100% do valor de volta</b>, sem descontar nada</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span><b>Sem perguntas</b> e sem burocracia</span></li>
+        <li><svg class="ic"><use href="#i-escudo"/></svg><span>Direito garantido pelo <b>Código de Defesa do Consumidor</b> (art. 49)</span></li>
+      </ul>
       <p class="forte">O risco é todo nosso.</p>
     </div>
   </div>
@@ -925,7 +949,7 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
     <p class="intro">Você pode continuar como sempre: procurando receita solta na internet, sem saber a medida. Ou abrir o armário, pegar o vidrinho âmbar que você mesmo preparou e cuidar de quem você ama, como a vó fazia.</p>
     <p class="intro"><b style="color:#fbf2da">O costume é o mesmo. A escolha é sua. E hoje custa menos que uma pizza.</b></p>
     <div class="preco-final">
-      <p class="preco"><sup>R$</sup><span data-preco="completo">27,00</span></p>
+      <p class="preco"><sup>R$</sup><span data-preco="completo">37,00</span></p>
       <p class="unico">pagamento único · acesso na hora</p>
     </div>
     <div class="acao">
@@ -944,30 +968,12 @@ function fotoEtapaFalta(img,n){var f=img.parentNode;f.classList.add('vazia');if(
   </div>
 </footer>
 
-<!-- 19. POPUP DOWNSELL: aparece quando a pessoa escolhe "só o livro" -->
-<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTit">
-  <div class="pop-caixa">
-    <button class="pop-x" id="popX" aria-label="Fechar">×</button>
-    <h3 id="popTit">Espera! Por só R$ <span id="popDif">10</span> a mais…</h3>
-    <p>…você leva os 4 presentes junto com a Botica:</p>
-    <ul class="leva">
-      <li><svg class="ic"><use href="#i-check"/></svg>A Farmacinha Sem Álcool</li>
-      <li><svg class="ic"><use href="#i-check"/></svg>Do Quintal pro Vidrinho</li>
-      <li><svg class="ic"><use href="#i-check"/></svg>Vidrinhos de Presente (Natal)</li>
-      <li><svg class="ic"><use href="#i-check"/></svg>Não Jogue Fora</li>
-    </ul>
-    <a class="btn" href="https://go.perfectpay.com.br/PPU38CQHULB" data-checkout="completo">Sim, quero a Botica Completa<small>R$ <span data-preco="completo">27,00</span></small></a>
-    <a class="pop-nao" href="https://go.perfectpay.com.br/PPU38CQHULD" data-checkout="basico" id="popNao">Não, quero só o livro por R$ <span data-preco="basico">17,00</span></a>
-  </div>
-</div>
-
 <script>
 /* ===== CONFIGURAÇÃO: troque aqui preços, links do checkout e e-mail de suporte ===== */
 const CONFIG = {
-  precos: { completo: "27,00", basico: "17,00", antigo: "197,00" },
+  precos: { completo: "37,00", antigo: "197,00" },
   checkout: {
-    completo: "https://go.perfectpay.com.br/PPU38CQHULB",  // R$ 27,00 (Botica Completa)
-    basico:   "https://go.perfectpay.com.br/PPU38CQHULD"   // R$ 17,00 (só o livro)
+    completo: "https://go.perfectpay.com.br/PPU38CQHULB",  // Botica Completa: confira se o preço na PerfectPay é R$ 37,00
   },
   suporte: "",  // ex.: "contato@seudominio.com.br" — vazio esconde a linha de suporte no rodapé
 };
@@ -1008,7 +1014,6 @@ const num = v => parseFloat(String(v).replace('.', '').replace(',', '.'));
 
 // Preços e diferença do popup
 $$('[data-preco]').forEach(el => { const v = CONFIG.precos[el.dataset.preco]; if (v) el.textContent = v; });
-$('#popDif').textContent = String(Math.round(num(CONFIG.precos.completo) - num(CONFIG.precos.basico)));
 
 // Links do checkout com UTMs repassadas da URL
 const utm = location.search.replace(/^\?/, '');
@@ -1018,17 +1023,8 @@ $$('[data-checkout]').forEach(a => { a.href = comUtm(CONFIG.checkout[a.dataset.c
 // Pixel
 const track = (ev, data) => { if (window.fbq) fbq('track', ev, data); };
 $$('[data-checkout]').forEach(a => a.addEventListener('click', e => {
-  if (a.hasAttribute('data-downsell')) return;  // o "só o livro" abre o popup antes
   track('InitiateCheckout', { value: num(CONFIG.precos[a.dataset.checkout]), currency: 'BRL', content_name: a.dataset.checkout });
 }));
-
-// Popup de downsell: primeiro clique em "só o livro" oferece o completo
-const pop = $('#pop');
-const fecharPop = () => pop.classList.remove('on');
-$$('[data-downsell]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); pop.classList.add('on'); }));
-$('#popX').addEventListener('click', fecharPop);
-pop.addEventListener('click', e => { if (e.target === pop) fecharPop(); });
-addEventListener('keydown', e => { if (e.key === 'Escape') fecharPop(); });
 
 // Depoimentos (faixa que corre sozinha)
 if (CONFIG.depoimentos.length) {
