@@ -26,6 +26,19 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1128606246819848&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('DC4NJHRC77UFB3T6B4J0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
 <!-- UTMIFY: cole seu pixel aqui -->
 
 <style>
@@ -1037,7 +1050,15 @@ const comUtm = u => u + (utm && !u.startsWith('#') ? (u.includes('?') ? '&' : '?
 $$('[data-checkout]').forEach(a => { a.href = comUtm(CONFIG.checkout[a.dataset.checkout]); });
 
 // Pixel
-const track = (ev, data) => { if (window.fbq) fbq('track', ev, data); };
+const track = (ev, data) => {
+  if (window.fbq) fbq('track', ev, data);
+  // TikTok: mesmos eventos (ViewContent / InitiateCheckout), no formato que o TikTok pede
+  try {
+    if (window.ttq) ttq.track(ev, Object.assign({ content_type: 'product',
+      contents: [{ content_id: 'botica-' + (data.content_name || 'completo'), content_type: 'product', content_name: 'A Botica dos Antigos' }] },
+      data.value ? { value: data.value, currency: data.currency } : {}));
+  } catch (e) {}
+};
 $$('[data-checkout]').forEach(a => a.addEventListener('click', e => {
   track('InitiateCheckout', { value: num(CONFIG.precos[a.dataset.checkout]), currency: 'BRL', content_name: a.dataset.checkout });
 }));
